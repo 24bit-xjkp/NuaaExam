@@ -303,3 +303,4 @@ TSWLatexianTemp*
 .vscode
 .xmake
 build
+*.pdf
