@@ -57,8 +57,7 @@ rule_end()
 package("exam-zh")
     set_homepage("https://gitee.com/xkwxdyy/exam-zh")
     set_description("中国试卷 LaTeX 模板")
-    set_urls("https://gitee.com/xkwxdyy/exam-zh/releases/download/$(version)/exam-zh-$(version).zip",
-             "https://gitee.com/xkwxdyy/exam-zh.git")
+    set_urls("https://gitee.com/xkwxdyy/exam-zh/releases/download/$(version)/exam-zh-$(version).zip")
     add_versions("v0.2.3", "986f7d1800e648490d721e3473c12398fbda1a98316caf9466b9f3b1cda46520")
 
     on_load(function (package)
