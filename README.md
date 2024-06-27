@@ -23,7 +23,7 @@
 3. 编译所有 $\LaTeX$ 文件
 
     ```shell
-    xmake config # 此时会自动下载依赖包exam-zh
+    xmake config
     xmake build
     xmake install -o /path/to/install
     ```

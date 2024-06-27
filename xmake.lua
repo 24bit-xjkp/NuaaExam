@@ -17,7 +17,7 @@ rule("latex")
         local find_main_file = false
         for _, file in ipairs(sourcebatch.sourcefiles) do
             if file == target:name()..".tex" then
-                table.insert(command, path.absolute(file))
+                table.insert(command, file)
                 find_main_file = true
                 break
             end
@@ -25,11 +25,10 @@ rule("latex")
         assert(find_main_file)
 
         depend.on_changed(function ()
-            local texinputs = os.getenv("TEXINPUTS")..(is_host("windows") and ";" or ":")
             progress.show(opt.progress, "${color.build.object}compiling target %s 1st", target:name())
-            os.runv(xelatex.program, command, {envs = {TEXINPUTS=texinputs}})
+            os.vrunv(xelatex.program, command)
             progress.show(opt.progress, "${color.build.object}compiling target %s 2nd", target:name())
-            os.runv(xelatex.program, command, {envs = {TEXINPUTS=texinputs}})
+            os.vrunv(xelatex.program, command)
         end, {changed = target:is_rebuilt() or not os.isfile(target_file..".pdf"), files = table.join(sourcebatch.sourcefiles), values = command})
     end)
     on_link(function (target)
@@ -54,22 +53,6 @@ rule("latex")
     end)
 rule_end()
 
-package("exam-zh")
-    set_homepage("https://gitee.com/xkwxdyy/exam-zh")
-    set_description("中国试卷 LaTeX 模板")
-    set_urls("https://gitee.com/xkwxdyy/exam-zh/releases/download/$(version)/exam-zh-$(version).zip")
-    add_versions("v0.2.3", "986f7d1800e648490d721e3473c12398fbda1a98316caf9466b9f3b1cda46520")
-
-    on_load(function (package)
-        package:addenv("TEXINPUTS", ".")
-    end)
-    on_install(function (package)
-        os.cp("*.sty", package:installdir())
-        os.cp("*.cls", package:installdir())
-    end)
-package_end()
 
 add_rules("latex")
-add_requires("exam-zh")
-add_packages("exam-zh")
 includes("*/*.xmake")
