@@ -4,8 +4,6 @@
 -- @author 24bit-xjkp
 -- @email 2283572185@qq.com
 
-set_prefixname("高等数学")
-
-target("2021-I(2)-期末")
-    add_files("2021-I(2)-期末.tex")
+target("高等数学2021-I(2)-期末")
+    add_files("高等数学2021-I(2)-期末.tex")
 target_end()

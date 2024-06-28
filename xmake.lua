@@ -19,11 +19,12 @@ rule("latex")
 
         os.mkdir(target:targetdir())
         local target_dir = path.join(vformat("$(buildir)"), ".obj", target:name())
+        target_dir = string.gsub(target_dir, "\\", "/")
         os.mkdir(target_dir)
-        target_file = path.join(target_dir, path.basename(target:filename()))
-        target_file = string.gsub(target_file, "\\", "/")
+        local target_file = path.join(target_dir, target:filename())
         local xelatex = assert(find_tool("xelatex"), "xelatex not found")
-        local command = {"-8bit", "-interaction=nonstopmode", "-halt-on-error", "-jobname="..target_file}
+        local command = {"-8bit", "-interaction=nonstopmode", "-halt-on-error",
+                         "-output-directory="..target_dir, "-jobname="..path.basename(target:filename())}
 
         local find_main_file = false
         for _, file in ipairs(sourcebatch.sourcefiles) do
@@ -42,12 +43,12 @@ rule("latex")
             os.vrunv(xelatex.program, command)
             progress.show(opt.progress, "${color.build.object}compiling target %s 2nd", target:name())
             os.vrunv(xelatex.program, command)
-        end, {changed = target:is_rebuilt() or not os.isfile(target_file..".pdf"), files = table.join(sourcebatch.sourcefiles), values = command})
+        end, {changed = target:is_rebuilt(), files = table.join(sourcebatch.sourcefiles, target_file), values = command})
     end)
     on_link(function (target, opt)
         import("core.project.depend")
         import("utils.progress")
-        local src_file = path.join(vformat("$(buildir)"), ".obj", target:name(), target:filename())
+        local src_file = path.join("$(buildir)", ".obj", target:name(), target:filename())
         local dst_file = target:targetfile()
         -- 复制输出的pdf到目标目录
         depend.on_changed(function ()
@@ -56,8 +57,8 @@ rule("latex")
         end, {changed = target:is_rebuilt(), files = {src_file, dst_file}, values = {}})
     end)
     on_clean(function (target)
-        local target_dir = path.join(vformat("$(buildir)"), ".obj", target:name())
-        local suffix = {"aux", "log", "out", "toc", "pdf"}
+        local target_dir = path.join("$(buildir)", ".obj", target:name())
+        local suffix = {"aux", "log", "out", "toc", "pdf", "solution"}
         for _, v in ipairs(suffix) do
             os.rm(target_dir.."/*."..v)
         end
