@@ -1,0 +1,56 @@
+% @file 高等数学2021-I(2)-期末.tex
+% @brief 2021高等数学I(2)期末考题
+% @author 24bit-xjkp
+% @email 2283572185@qq.com
+
+\documentclass{exam-zh}
+
+\examsetup{
+    title = {title-format= \bfseries\huge},
+    fillin/type = line,
+    fillin/no-answer-type = none,
+    question/show-answer = false,
+    solution/show-solution = show-move
+}
+
+\title{南京航空航天大学}
+\subject{2021《高等数学I(2)》期末考试试题}
+
+\begin{document}
+\maketitle
+
+\section{填空题（每空3分），共30分}
+\scoringbox
+
+\begin{question}[points = 3]
+    极限 $\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = $ \fillin[1]；
+\end{question}
+\begin{solution}
+    分子分母极限均存在，直接计算即可。$\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = 1$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设函数$z = e^{xy}$，在点$\left(1, 1\right)$处当$\Delta x = 0.15, \Delta y = 0.1$时的全增量$\Delta z = $ \fillin[$0.25e$]；
+\end{question}
+\begin{solution}
+    $\because \frac{\partial z}{\partial x} = ye^x \quad \frac{\partial z}{\partial y} = xe^y \qquad
+        \therefore dz = ye^xdx + xe^ydy$ \\
+    $\therefore dz|_{\left(1, 1\right)} = edx + edy \qquad
+        \therefore \Delta z = 0.15e + 0.1e = 0.25e$；
+\end{solution}
+
+\begin{question}[points = 3]
+    曲面$e^z - z + xy = 3$在点$\left(2, 1, 0\right)$处的切平面方程为 \fillin[$x + 2y = 4$]；
+\end{question}
+\begin{solution}
+    令$F\left(x, y, z\right) = e^z - z + zy - 3$ \\
+    $\therefore \frac{\partial F}{\partial x} = y \quad \frac{\partial F}{\partial y} = x \quad \frac{\partial F}{\partial z} = e^z - 1$ \\
+    $\therefore \frac{\partial F}{\partial x}|_{\left(2, 1, 0\right)} = 1 \quad
+        \frac{\partial F}{\partial y}|_{\left(2, 1, 0\right)} = 2 \quad
+        \frac{\partial F}{\partial z}|_{\left(2, 1, 0\right)} = 0$ \\
+    $\therefore \vec{n} = \left(1, 2, 0\right) \qquad
+     \therefore \Pi: \left(x - 2\right) + 2\left(y - 1\right) = 0 \qquad
+     \therefore \Pi: x + 2y = 4$；
+\end{solution}
+
+\end{document}
