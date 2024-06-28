@@ -19,38 +19,145 @@
 \begin{document}
 \maketitle
 
-\section{填空题（每空3分），共30分}
+\section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
 \scoringbox
 
 \begin{question}[points = 3]
     极限 $\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = $ \fillin[1]；
 \end{question}
 \begin{solution}
-    分子分母极限均存在，直接计算即可。$\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = 1$；
+    分子分母极限均存在，直接计算即可。 $\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = 1$；
 \end{solution}
 
 \begin{question}[points = 3]
-    设函数$z = e^{xy}$，在点$\left(1, 1\right)$处当$\Delta x = 0.15, \Delta y = 0.1$时的全增量$\Delta z = $ \fillin[$0.25e$]；
+    设函数 $z = e^{xy}$ ，在点 $(1, 1)$ 处当 $\Delta x = 0.15, \Delta y = 0.1$ 时的全增量 $\Delta z = $ \fillin[$0.25e$]；
 \end{question}
 \begin{solution}
     $\because \frac{\partial z}{\partial x} = ye^x \quad \frac{\partial z}{\partial y} = xe^y \qquad
         \therefore dz = ye^xdx + xe^ydy$ \\
-    $\therefore dz|_{\left(1, 1\right)} = edx + edy \qquad
+    $\therefore dz|_{(1, 1)} = edx + edy \qquad
         \therefore \Delta z = 0.15e + 0.1e = 0.25e$；
 \end{solution}
 
 \begin{question}[points = 3]
-    曲面$e^z - z + xy = 3$在点$\left(2, 1, 0\right)$处的切平面方程为 \fillin[$x + 2y = 4$]；
+    曲面 $e^z - z + xy = 3$ 在点 $(2, 1, 0)$ 处的切平面方程为 \fillin[$x + 2y = 4$]；
 \end{question}
 \begin{solution}
-    令$F\left(x, y, z\right) = e^z - z + zy - 3$ \\
-    $\therefore \frac{\partial F}{\partial x} = y \quad \frac{\partial F}{\partial y} = x \quad \frac{\partial F}{\partial z} = e^z - 1$ \\
-    $\therefore \frac{\partial F}{\partial x}|_{\left(2, 1, 0\right)} = 1 \quad
-        \frac{\partial F}{\partial y}|_{\left(2, 1, 0\right)} = 2 \quad
-        \frac{\partial F}{\partial z}|_{\left(2, 1, 0\right)} = 0$ \\
-    $\therefore \vec{n} = \left(1, 2, 0\right) \qquad
-     \therefore \Pi: \left(x - 2\right) + 2\left(y - 1\right) = 0 \qquad
-     \therefore \Pi: x + 2y = 4$；
+    令 $F\left(x, y, z\right) = e^z - z + zy - 3$
+
+    $\therefore \frac{\partial F}{\partial x} = y \quad \frac{\partial F}{\partial y} = x \quad \frac{\partial F}{\partial z} = e^z - 1$
+
+    $\therefore \frac{\partial F}{\partial x}|_{(2, 1, 0)} = 1 \quad$
+    $\frac{\partial F}{\partial y}|_{(2, 1, 0)} = 2 \quad$
+    $\frac{\partial F}{\partial z}|_{(2, 1, 0)} = 0$
+
+    $\therefore \vec{n} = (1, 2, 0) \qquad$
+    $\therefore \Pi: (x - 2) + 2(y - 1) = 0 \qquad$
+    $\therefore \Pi: x + 2y = 4$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\Sigma$ 为球面 $x^2 + y^2 + z^2 = 1$ ，则球面上的点 $\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$
+    处指向球面内侧的单位法向量为 \fillin[$\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$]；
+\end{question}
+\begin{solution}
+    令 $F\left(x, y, z\right) = x^2 + y^2 + z^2 - 1$
+
+    $\therefore \frac{\partial F}{\partial x} = 2x \quad \frac{\partial F}{\partial y} = 2y \quad \frac{\partial F}{\partial z} = 2z$
+
+    $\therefore \frac{\partial F}{\partial x}|_{\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)} = \frac{2}{\sqrt{3}} \quad$
+    $\frac{\partial F}{\partial y}|_{\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)} = \frac{2}{\sqrt{3}}$
+    $\quad \frac{\partial F}{\partial z}|_{\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)} = \frac{2}{\sqrt{3}}$
+
+    $\therefore \vec{n} = \left(\frac{2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right) \qquad$
+    $\therefore \vec{n^0} = \left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设向量场 $A = x(1 + x^2z)\vec{i} + y(1 - x^2z)\vec{j} + z(1 - x^2z)\vec{k}$，
+    则其在点 $M(1, 2, -1)$ 处的散度 $\mathrm{div} \, \vec{A}|_M = $ \fillin[3]；
+\end{question}
+\begin{solution}
+    $\because \nabla\cdot\vec{M} = (1 + 3x^2z) + (1-x^2z) + (1-2x^2z) = 3$
+
+    $\therefore \mathrm{div} \, \vec{A}|_M = 3$；
+\end{solution}
+
+\begin{question}[points = 3]
+    若 $|q| < 1$ ，则级数 $\sum\limits_{n = 1}^{\infty} aq^n$ 的和为 \fillin[$\frac{aq}{1 - q}$]；
+\end{question}
+\begin{solution}
+    令 $b_n = aq^n \qquad \therefore b_1 = aq \qquad \therefore s_n = \frac{aq(1 - q^n)}{1 - q}$
+
+    $\therefore \sum\limits_{n = 1}^{\infty} aq^n = \lim\limits_{n \to \infty} s_n = \frac{aq}{1 - q}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\lim\limits_{n \to \infty} |\frac{a_{n + 1}}{a_n}| = 2$ ，则级数 $\sum\limits_{n = 1}^{\infty} \frac{a_n}{3^n}\left(x + 3\right)^n$
+    的收敛半径 $R = $\fillin[\frac{1}{6}]； %TODO：验证结果
+\end{question}
+\begin{solution}
+    % TODO：解析
+\end{solution}
+
+\begin{question}[points = 3]
+    $f(x) = \left\{
+        \begin{aligned}
+             & -x, -\pi < x \leq 0 \\
+             & 0, 0 < x \leq \pi
+        \end{aligned}
+        \right
+        .$，
+    $s(x)$ 为 $f(x)$ 的以 $2\pi$ 为周期的傅里叶级数的和函数，
+    则$s\left(\pi\right) + s\left(-\pi\right) = $\fillin[$\frac{\pi}{4}$]； %TODO：验证结果
+\end{question}
+\begin{solution}
+    % TODO：解析
+\end{solution}
+
+\begin{question}[points = 3]
+    微分方程 $y^{\prime\prime} = -\frac{3}{x}y^{\prime} + 1 (x > 0)$ 满足初始条件$y|_{z = 1} = 0, y^{\prime}|_{z = 1} = 1$
+    的特解为 \fillin[$y = \frac{x^2}{8} - \frac{3}{8}x^{-2} + \frac{1}{4}$]；
+\end{question}
+\begin{solution}
+    令 $f(x) = y^{\prime} \qquad \therefore f^{\prime} = -\frac{3}{x}f + 1 \qquad$
+    $\therefore \int\frac{df}{f} = \int -\frac{3}{x} + \frac{1}{f} dx$
+
+    $\therefore \ln f = -3\ln x + \int\frac{1}{f}dx \qquad$
+    $\therefore f = x^{-3}C(x)$
+
+    将 $f$ 带回方程 $-3x^{-4}C + x^{-3}C^{\prime} = -3x^{-4}C + 1 \qquad \therefore C^{\prime} = x^3 \qquad$
+    $\therefore C(x) = \frac{x^4}{4} + C_1$
+
+    $\therefore f = \frac{x}{4} + C_1x^{-3} \qquad$
+    又 $\because f|_{x = 1} = y^{\prime}|_{z = 1} = 1 \qquad$
+    $C_1 = \frac{3}{4} \qquad \therefore f = \frac{x}{4} + \frac{3}{4}x^{-3}$
+
+    又 $\because f = y^{\prime} \qquad \therefore \int y dy = \int \frac{x}{4} + \frac{3}{4}x^{-3} dx \qquad$
+    $\therefore y = \frac{x^2}{8} - \frac{3}{8}x^{-2} + C_2$
+
+    又 $\because y|_{z = 1} = 0 \qquad \therefore C_2 = \frac{1}{4} \qquad$
+    $\therefore y = \frac{x^2}{8} - \frac{3}{8}x^{-2} + \frac{1}{4}$；
+\end{solution}
+
+\begin{question}
+    已知 $y_1 = xe^x + e^{2x}, y_2 = xe^x, y_3 = xe^x + e^{2x} - e^{-x}$ 是二阶常系数线性齐次微分方程
+    $y^{\prime\prime} + py^{\prime} + qy = e^x - 2xe^x$ 的三个特解，则此微分方程为
+    \fillin[$y^{\prime\prime} - y^{\prime} - 2y = e^x - 2xe^x$]；
+\end{question}
+\begin{solution}
+    $\because$ 观察特解 $y_1, y_2, y_3$ 可知，对于 $e^{\mu x}$ ，存在 $\mu_1 = 1, \mu_2 = 2, \mu_3 = -1$
+
+    又 $\because$ 非齐次部分 $e^x - 2xe^x = e^x(1 - 2x)$ ，注意到公因式为 $e^x$
+
+    $\therefore$ 特解 $y^*$ 满足 $y^* = e^x(ax + b)$ 形式 $\qquad$
+    $\therefore \mu = 1$ 不是特征方程 $\lambda^2 + p\lambda + q = 0$ 的解
+
+    $\therefore$ 特征方程的解 $\lambda_1 = 2, \lambda_2 = -1 \qquad$
+    $\therefore$ 特征方程为 $(\lambda - 2)(\lambda + 1) = 0$
+
+    $\therefore \lambda^2 - \lambda - 2 = 0 \qquad$
+    根据特征方程反推得原微分方程 $y^{\prime\prime} - y^{\prime} - 2y = e^x - 2xe^x$；
 \end{solution}
 
 \end{document}
