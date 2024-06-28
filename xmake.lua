@@ -2,6 +2,10 @@ set_project("NuaaExam")
 
 rule("latex")
     set_extensions(".tex")
+    -- 扩展名必须设置成pdf，否则安装时会报目标未构建
+    on_load(function (target)
+        assert(path.extension(target:targetfile()) == ".pdf")
+    end)
     on_build_files(function (target, sourcebatch, opt)
         import("core.project.depend")
         import("utils.progress")
@@ -24,6 +28,7 @@ rule("latex")
         end
         assert(find_main_file)
 
+        -- 不含bibtex的需要编译两次以生成正确的交叉引用
         depend.on_changed(function ()
             progress.show(opt.progress, "${color.build.object}compiling target %s 1st", target:name())
             os.vrunv(xelatex.program, command)
@@ -31,11 +36,16 @@ rule("latex")
             os.vrunv(xelatex.program, command)
         end, {changed = target:is_rebuilt() or not os.isfile(target_file..".pdf"), files = table.join(sourcebatch.sourcefiles), values = command})
     end)
-    on_link(function (target)
-        local file_name = target:basename()..".pdf"
-        local src_file = path.join(vformat("$(buildir)"), ".obj", target:name(), file_name)
-        local dst_file = path.join(target:targetdir(), file_name)
-        os.cp(src_file, dst_file)
+    on_link(function (target, opt)
+        import("core.project.depend")
+        import("utils.progress")
+        local src_file = path.join(vformat("$(buildir)"), ".obj", target:name(), target:basename()..".pdf")
+        local dst_file = target:targetfile()
+        -- 复制输出的pdf到目标目录
+        depend.on_changed(function ()
+            progress.show(opt.progress, "${color.build.target}copying target %s pdf", target:name())
+            os.cp(src_file, dst_file)
+        end, {changed = target:is_rebuilt(), files = {src_file, dst_file}, values = {}})
     end)
     on_clean(function (target)
         local target_dir = path.join(vformat("$(buildir)"), ".obj", target:name())
@@ -43,13 +53,16 @@ rule("latex")
         for _, v in ipairs(suffix) do
             os.rm(target_dir.."/*."..v)
         end
-        os.rm(path.join(target:targetdir(), target:basename()..".pdf"))
+        os.rm(target:targetfile())
     end)
     on_install(function (target)
-        local file_name = target:basename()..".pdf"
-        local src_file = path.join(target:targetdir(), file_name)
-        local dst_file = path.join("$(installdir)", file_name)
-        os.cp(src_file, dst_file)
+        os.cp(target:targetfile(), path.join(target:installdir(), target:basename()..".pdf"))
+    end)
+    on_uninstall(function (target)
+        os.rm(path.join(target:installdir(), target:basename()..".pdf"))
+        if #os.files(target:installdir()) == 0 then
+            os.rmdir(target:installdir())
+        end
     end)
 rule_end()
 
