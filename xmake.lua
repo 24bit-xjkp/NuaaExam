@@ -1,3 +1,9 @@
+-- @file xmake.lua
+-- @brief xmake构建脚本
+-- @detail 定义latex构建规则
+-- @author 24bit-xjkp
+-- @email 2283572185@qq.com
+
 set_project("NuaaExam")
 
 rule("latex")
@@ -14,13 +20,15 @@ rule("latex")
         os.mkdir(target:targetdir())
         local target_dir = path.join(vformat("$(buildir)"), ".obj", target:name())
         os.mkdir(target_dir)
-        target_file = path.join(target_dir, target:basename())
+        target_file = path.join(target_dir, path.basename(target:filename()))
+        target_file = string.gsub(target_file, "\\", "/")
         local xelatex = assert(find_tool("xelatex"), "xelatex not found")
         local command = {"-8bit", "-interaction=nonstopmode", "-halt-on-error", "-jobname="..target_file}
 
         local find_main_file = false
         for _, file in ipairs(sourcebatch.sourcefiles) do
-            if file == target:name()..".tex" then
+            if path.basename(file) == target:name() then
+                file = string.gsub(file, "\\", "/")
                 table.insert(command, file)
                 find_main_file = true
                 break
@@ -39,7 +47,7 @@ rule("latex")
     on_link(function (target, opt)
         import("core.project.depend")
         import("utils.progress")
-        local src_file = path.join(vformat("$(buildir)"), ".obj", target:name(), target:basename()..".pdf")
+        local src_file = path.join(vformat("$(buildir)"), ".obj", target:name(), target:filename())
         local dst_file = target:targetfile()
         -- 复制输出的pdf到目标目录
         depend.on_changed(function ()
@@ -56,10 +64,11 @@ rule("latex")
         os.rm(target:targetfile())
     end)
     on_install(function (target)
-        os.cp(target:targetfile(), path.join(target:installdir(), target:basename()..".pdf"))
+        os.cp(target:targetfile(), path.join(target:installdir(), target:filename()))
     end)
     on_uninstall(function (target)
-        os.rm(path.join(target:installdir(), target:basename()..".pdf"))
+        os.rm(path.join(target:installdir(), target:filename()))
+        -- 目录为空时删除目录
         if #os.files(target:installdir()) == 0 then
             os.rmdir(target:installdir())
         end
@@ -68,4 +77,5 @@ rule_end()
 
 
 add_rules("latex")
-includes("*/*.xmake")
+set_extension(".pdf")
+includes("*/xmake.lua")
