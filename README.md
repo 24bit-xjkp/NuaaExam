@@ -16,6 +16,12 @@
    | $\TeX$ Live | 宏包完整，安装包较大，安装时间较长 | [南京大学镜像站](<https://mirrors.nju.edu.cn/CTAN/systems/texlive>)      |
    | MiK $\TeX$  | 安装包小，但需要手动安装部分宏包   | [南京大学镜像站](<https://mirrors.nju.edu.cn/CTAN/systems/win32/miktex>) |
 
+   源代码仅能通过`xelatex`工具编译，因而需要验证`xelatex`是否可用：
+
+   ```shell
+   xelatex -v
+   ```
+
 2. 安装Xmake构建工具
 
    下载并安装[Xmake](<https://xmake.io/#/zh-cn/guide/installation>)，这是Xmake工具的[文档](<https://xmake.io/#/zh-cn>)。
