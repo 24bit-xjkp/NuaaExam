@@ -1,0 +1,34 @@
+% @file chapter1.tex
+% @brief 第一章风格设置
+% @author 24bit-xjkp
+% @email 2283572185@qq.com
+
+% 通用设置
+\examsetup
+{
+    fillin/type = line,
+    fillin/no-answer-type = none,
+    solution/show-qed = false
+}
+
+% 内联答案则选择填空显示答案
+\ifdefstring{\Solution}{inline}
+{\examsetup{question/show-answer = true}}
+{\examsetup{question/show-answer = false}}
+% 内联答案则原位显示解答
+\ifdefstring{\Solution}{inline}
+{\examsetup{solution/show-solution = show-stay}}
+{
+    % 后置答案则将解答移动到最后
+    \ifdefstring{\Solution}{backend}
+    {\examsetup{solution/show-solution = show-move}}
+    % 隐藏答案和混合模式则不显示任何解答
+    {\examsetup{solution/show-solution = hide}}
+}
+
+% 生成混合模式的试题章节
+\ifdefstring{\Solution}{mixed}
+{
+    \tableofcontents
+    \chapter{试题}
+}{}
