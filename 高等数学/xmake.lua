@@ -4,6 +4,5 @@
 -- @author 24bit-xjkp
 -- @email 2283572185@qq.com
 
-target("高等数学2021-I(2)-期末")
-    add_files("高等数学2021-I(2)-期末.tex")
-target_end()
+set_group("高等数学")
+includes("*/xmake.lua")

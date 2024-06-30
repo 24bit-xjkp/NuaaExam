@@ -305,3 +305,5 @@ TSWLatexianTemp*
 build
 *.pdf
 .VSCodeCounter
+.emmyrc.json
+test.tex
