@@ -1,0 +1,24 @@
+% @file 高等数学2021-I(2)-期末.tex
+% @brief 章节包装
+% @author 24bit-xjkp
+% @email 2283572185@qq.com
+
+\documentclass{exam-zh}
+\usepackage{etoolbox}
+
+\title{南京航空航天大学}
+\subject{2021《高等数学I(2)》期末考试试题}
+
+\begin{document}
+\maketitle
+
+\input{../../template/chapter1.tex}
+\input{paper.tex}
+
+% 混合模式时生成第二章，内容不变
+\ifdefstring{\Solution}{mixed}
+{
+    \input{../../template/chapter2.tex}
+    \input{paper.tex}
+}{}
+\end{document}
