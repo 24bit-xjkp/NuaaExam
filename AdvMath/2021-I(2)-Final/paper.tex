@@ -96,10 +96,12 @@
         \right
         .$，
     $s(x)$ 为 $f(x)$ 的以 $2\pi$ 为周期的傅里叶级数的和函数，
-    则$s\left(\pi\right) + s\left(-\pi\right) = $\fillin[$\frac{\pi}{4}$]； %TODO：验证结果
+    则$s(\pi) + s(-\pi) = $\fillin[$\pi$]；
 \end{question}
 \begin{solution}
-    % TODO：解析
+    $\because x = \pi$ 是 $f(x)$ 的间断点 $\qquad \therefore s(\pi) = \frac{1}{2}[f(\pi^-) + f(\pi^+)] = \frac{1}{2}[0 + \pi] = \frac{\pi}{2}$
+
+    同理 $s(-\pi) = \frac{\pi}{2} \qquad \therefore s(\pi) + s(-\pi) = \pi$；
 \end{solution}
 
 \begin{question}[points = 3]
@@ -145,4 +147,68 @@
 
     $\therefore \lambda^2 - \lambda - 2 = 0 \qquad$
     $\therefore$ 根据特征方程反推得原微分方程 $y^{\prime\prime} - y^{\prime} - 2y = e^x - 2xe^x$；
+\end{solution}
+
+\section{选择题：本题共 3 小题，每小题 3 分，共 9 分}
+\scoringbox
+
+\begin{question}[points = 3]
+    已知 $f(x, y) = e^{\sqrt{x^4 + y^2}}$ ，则 \,\paren[C]
+\end{question}
+\begin{choices}
+    \item $f_x(0, 0), f_y(0, 0)$ 都存在
+    \item $f_x(0, 0), f_y(0, 0)$ 都不存在
+    \item $f_x(0, 0)$ 存在， $f_y(0, 0)$ 不存在
+    \item $f_x(0, 0)$ 不存在， $f_y(0, 0)$ 存在
+\end{choices}
+\begin{solution}
+    $\because f(0, 0) = e^{\sqrt{0^4 + 0^2}} = 1$
+
+    $\therefore f_x(0, 0) = \lim\limits_{\Delta x \to 0} \frac{e^{\sqrt{{\Delta x}^4 + 0^2}} - f(0, 0)}{\Delta x}$
+    $= \lim\limits_{\Delta x \to 0} \frac{e^{{\Delta x}^2} - 1}{\Delta x} = \lim\limits_{\Delta x \to 0} \frac{{\Delta x}^2}{\Delta x} = 0$
+
+    $\therefore f_y(0, 0) = \lim\limits_{\Delta y \to 0} \frac{e^{\sqrt{0^4 + {\Delta y}^2}} - f(0, 0)}{\Delta y}$
+    $= \lim\limits_{\Delta y \to 0} \frac{e^{ |\Delta y| } - 1}{\Delta y}$
+
+    又 $\because \lim\limits_{\Delta y \to 0^+} \frac{e^{ |\Delta y| } - 1}{\Delta y} = \lim\limits_{\Delta y \to 0^+} \frac{\Delta y}{\Delta y} = 1 \qquad$
+    $\lim\limits_{\Delta y \to 0^-} \frac{e^{ |\Delta y| } - 1}{\Delta y} = \lim\limits_{\Delta y \to 0^-} \frac{-\Delta y}{\Delta y} = -1$
+
+    $\therefore f_x(0, 0)$ 存在， $f_y(0, 0)$ 不存在；
+\end{solution}
+
+\begin{question}[points = 3]
+    设函数 $f(x, y)$ 为平面上连续函数，则 $\int_{-1}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy = $ \, \paren[A]
+\end{question}
+\begin{choices}
+    \item $2 \int_{0}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy$
+    \item $4 \int_{0}^{1}dx \int_{0}^{x} yf(x^2, y^2)dy$
+    \item $2 \int_{0}^{1}dy \int_{-y}^{y} yf(x^2, y^2)dy$
+    \item $0$
+\end{choices}
+\begin{solution}
+    $\because$ 积分区域 $D$ 为 $x \in [-1 ,1], y \in [0, 1]$ ，关于 $y$ 轴对称
+
+    又 $\because$ 被积函数 $yf(x^2, y^2)$ 是 $x$ 的奇函数
+
+    $\therefore \int_{-1}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy = 2 \int_{0}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\mu_n > 0 (n = 1, 2, \cdots)$ ，若 $\lim\limits_{n \to \infty} n^2 \mu_n = l (0 < l < + \infty)$ ，
+    则交错级数 $\sum\limits_{n = 1}^{\infty} (-1)^n \mu_n$ \, \paren[A]
+\end{question}
+\begin{choices}
+    \item 绝对收敛
+    \item 条件收敛
+    \item 发散
+    \item 不能确定其敛散性
+\end{choices}
+\begin{solution}
+    $\because \lim\limits_{n \to \infty} n^2 \mu_n = \lim\limits_{n \to \infty} \frac{\mu_n}{\frac{1}{n^2}} = l (0 < l < + \infty)$
+
+    $\therefore \sum\limits_{n = 1}^{\infty} \mu_n$ 的敛散性与 $\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ 相同 $\qquad$
+    又 $\because \sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ 收敛 $\qquad$
+    $\therefore \sum\limits_{n = 1}^{\infty} \mu_n$ 收敛
+
+    $\therefore \sum\limits_{n = 1}^{\infty} (-1)^n \mu_n$ 绝对收敛
 \end{solution}
