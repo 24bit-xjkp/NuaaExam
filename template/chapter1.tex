@@ -3,18 +3,37 @@
 % @author 24bit-xjkp
 % @email 2283572185@qq.com
 
+% 便于编写时查看排版效果
+\ifdefined\Solution
+\else
+    \def\Solution{inline}
+\fi
+
 % 通用设置
 \examsetup
 {
     fillin/type = line,
     fillin/no-answer-type = none,
-    solution/show-qed = false
+    solution/show-qed = false,
+    paren/type = none
 }
 
 % 内联答案则选择填空显示答案
 \ifdefstring{\Solution}{inline}
-{\examsetup{question/show-answer = true}}
-{\examsetup{question/show-answer = false}}
+{
+    \examsetup
+    {
+        question/show-answer = true,
+        paren/show-answer = true
+    }
+}
+{
+    \examsetup
+    {
+        question/show-answer = false,
+        paren/show-answer = false
+    }
+}
 % 内联答案则原位显示解答
 \ifdefstring{\Solution}{inline}
 {\examsetup{solution/show-solution = show-stay}}
