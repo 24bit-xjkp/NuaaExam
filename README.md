@@ -26,20 +26,7 @@
 
    下载并安装[Xmake](<https://xmake.io/#/zh-cn/guide/installation>)，这是Xmake工具的[文档](<https://xmake.io/#/zh-cn/>)。
 
-3. 安装Python工具
-
-   本项目使用Python脚本来包装命令行选项，因而需要安装Python工具。
-
-   - Linux(以Ubuntu为例)
-
-   ```shell
-      sudo apt install python3
-   ```
-
-   - Windows/MacOS
-   从[官网](<https://www.python.org/downloads/>)下载并安装Python3。
-
-4. 编译所有 $\LaTeX$ 文件
+3. 编译所有 $\LaTeX$ 文件
 
    ```shell
    xmake config --option=value       # 设置构建选项
@@ -61,4 +48,3 @@
 
 - exam-zh: <https://gitee.com/xkwxdyy/exam-zh>
 - xmake: <https://github.com/xmake-io/xmake/>
-- python: <https://www.python.org>

@@ -5,4 +5,5 @@
 -- @email 2283572185@qq.com
 
 set_group("高等数学")
+set_prefixname("高等数学")
 includes("*/xmake.lua")
