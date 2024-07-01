@@ -34,55 +34,47 @@ rule("latex")
 
         os.mkdir(target:targetdir())
         local target_dir = path.join(vformat("$(buildir)"), ".obj", target:name())
-        target_dir = string.gsub(target_dir, "\\", "/")
         os.mkdir(target_dir)
-        local target_file = path.join(target_dir, target:filename())
+        local target_file = path.join(target_dir, target:name()..".pdf")
         local xelatex = assert(find_tool("xelatex"), "xelatex not found")
-        local python = assert(find_tool("python3") or find_tool("python"), "python not found")
         local command = {"-8bit", "-file-line-error", "-interaction=nonstopmode", "-halt-on-error",
-                         "-jobname="..path.basename(target:filename())}
+                         "-jobname="..target:name(), "-output-directory="..path.absolute(target_dir)}
 
         local find_main_file = false
-        local main_file = ""
+        local main_file = "" -- 主文件名恒为main.tex
         for _, file in ipairs(sourcebatch.sourcefiles) do
-            if path.basename(file) == target:name() then
+            if path.filename(file) == "main.tex" then
                 main_file = string.gsub(file, "\\", "/")
                 find_main_file = true
                 break
             end
         end
-        assert(find_main_file)
+        assert(find_main_file, "main.tex not found")
 
         local main_dir = path.directory(main_file)
-        local out_dir = string.gsub(path.relative(target_dir, main_dir), "\\", "/")
-        table.insert(command, "-output-directory="..out_dir)
         -- 添加预定义宏
         local defines = [["\def\Solution{%s}\input{%s}"]]
         table.insert(command, format(defines, get_config("solution"), path.filename(main_file)))
 
         -- 不含bibtex的需要编译两次以生成正确的交叉引用
         depend.on_changed(function ()
-            -- 生成命令包装文件
-            local wrap_file_path = path.join(target_dir, target:name()..".wrap")
             local commands = xelatex.program.." "
             for _, v in ipairs(command) do
                 commands = commands..v.." "
             end
-            io.writefile(wrap_file_path, main_dir.."\n"..commands)
-            -- 设置包装脚本路径
-            local wrap_script = path.join(os.scriptdir(), "template", "wrap.py")
 
-            -- 调用包装脚本实现构建
+            local old_dir = os.cd(main_dir)
             progress.show(opt.progress, "${color.build.object}compiling target %s 1st", target:name())
-            os.vrunv(python.program, {wrap_script, wrap_file_path})
+            os.vrun(commands)
             progress.show(opt.progress, "${color.build.object}compiling target %s 2nd", target:name())
-            os.vrunv(python.program, {wrap_script, wrap_file_path})
+            os.vrun(commands)
+            os.cd(old_dir)
         end, {changed = target:is_rebuilt(), files = table.join(sourcebatch.sourcefiles, target_file), values = command})
     end)
     on_link(function (target, opt)
         import("core.project.depend")
         import("utils.progress")
-        local src_file = path.join("$(buildir)", ".obj", target:name(), target:filename())
+        local src_file = path.join("$(buildir)", ".obj", target:name(), target:name()..".pdf")
         local dst_file = target:targetfile()
         -- 复制输出的pdf到目标目录
         depend.on_changed(function ()
@@ -92,7 +84,7 @@ rule("latex")
     end)
     on_clean(function (target)
         local target_dir = path.join("$(buildir)", ".obj", target:name())
-        local suffix = {"aux", "log", "out", "toc", "pdf", "solution", "wrap", "xdv", "fls"}
+        local suffix = {"aux", "log", "out", "toc", "pdf", "solution", "xdv", "fls"}
         for _, v in ipairs(suffix) do
             os.rm(target_dir.."/*."..v)
         end
@@ -114,3 +106,31 @@ rule_end()
 add_rules("latex")
 set_extension(".pdf")
 includes("*/xmake.lua")
+
+includes("@builtin/xpack")
+xpack("NuaaExam")
+    set_version("0.1")
+    set_homepage("https://github.com/24bit-xjkp/NuaaExam")
+    set_title("NuaaExam")
+    set_description("基于LaTeX重新排版的南京航空航天大学高清试卷。")
+    set_author("24bit-xjkp 2283572185@qq.com")
+    set_maintainer("24bit-xjkp 2283572185@qq.com")
+    set_copyright("Copyright (C) 2024, 24bit-xjkp 2283572185@qq.com")
+    set_license("MIT")
+    set_licensefile("LICENSE")
+    set_bindir("")
+    set_formats("zip", "targz", "srczip", "srctargz")
+    -- LaTeX源文件
+    add_sourcefiles("(**/*.tex)|$(buildir)/.xpack/*.*")
+    -- xmake编译脚本
+    add_sourcefiles("(**/*.lua)|$(buildir)/.xpack/*.*")
+    -- 编译脚本、许可证和readme
+    add_sourcefiles("xmake.lua", "LICENSE", "README.md")
+
+    on_load(function (package)
+        import("core.project.project")
+        for name, target in pairs(project.targets()) do
+            package:add("targets", name)
+        end
+    end)
+xpack_end()

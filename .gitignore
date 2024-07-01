@@ -307,3 +307,6 @@ build
 .VSCodeCounter
 .emmyrc.json
 test.tex
+*.zip
+*.tar.gz
+install

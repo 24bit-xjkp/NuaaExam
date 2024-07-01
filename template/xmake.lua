@@ -5,4 +5,3 @@
 -- @email 2283572185@qq.com
 
 add_files("*.tex")
-add_extrafiles("wrap.py")
