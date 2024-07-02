@@ -4,7 +4,6 @@
 % @email 2283572185@qq.com
 
 \section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
-\scoringbox
 
 \begin{question}[points = 3]
     极限 $\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = $ \fillin[1]；
@@ -27,7 +26,7 @@
     曲面 $e^z - z + xy = 3$ 在点 $(2, 1, 0)$ 处的切平面方程为 \fillin[$x + 2y = 4$]；
 \end{question}
 \begin{solution}
-    令 $F\left(x, y, z\right) = e^z - z + zy - 3$
+    令 $F(x, y, z) = e^z - z + zy - 3$
 
     $\therefore \frac{\partial F}{\partial x} = y \quad \frac{\partial F}{\partial y} = x \quad \frac{\partial F}{\partial z} = e^z - 1$
 
@@ -45,7 +44,7 @@
     处指向球面内侧的单位法向量为 \fillin[$\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$]；
 \end{question}
 \begin{solution}
-    令 $F\left(x, y, z\right) = x^2 + y^2 + z^2 - 1$
+    令 $F(x, y, z) = x^2 + y^2 + z^2 - 1$
 
     $\therefore \frac{\partial F}{\partial x} = 2x \quad \frac{\partial F}{\partial y} = 2y \quad \frac{\partial F}{\partial z} = 2z$
 
@@ -88,13 +87,11 @@
 \end{solution}
 
 \begin{question}[points = 3]
-    $f(x) = \left\{
-        \begin{aligned}
-             & -x, -\pi < x \leq 0 \\
-             & 0, 0 < x \leq \pi
-        \end{aligned}
-        \right
-        .$，
+    $f(x) =
+        \begin{cases}
+            -x, -\pi < x \leq 0 \\
+            0, 0 < x \leq \pi
+        \end{cases}$，
     $s(x)$ 为 $f(x)$ 的以 $2\pi$ 为周期的傅里叶级数的和函数，
     则$s(\pi) + s(-\pi) = $\fillin[$\pi$]；
 \end{question}
@@ -150,7 +147,6 @@
 \end{solution}
 
 \section{选择题：本题共 3 小题，每小题 3 分，共 9 分}
-\scoringbox
 
 \begin{question}[points = 3]
     已知 $f(x, y) = e^{\sqrt{x^4 + y^2}}$ ，则 \,\paren[C]
@@ -211,4 +207,43 @@
     $\therefore \sum\limits_{n = 1}^{\infty} \mu_n$ 收敛
 
     $\therefore \sum\limits_{n = 1}^{\infty} (-1)^n \mu_n$ 绝对收敛
+\end{solution}
+
+\section{解答题：本题共 7 小题，共 61 分}
+
+\begin{problem}[points = 6]
+设 $u(x, y), v(x, y)$ 由方程组 $
+    \begin{cases}
+        x = e^u + u\sin{v} \\
+        y = e^u - u\cos{v}
+    \end{cases}$
+确定，求 $\frac{\partial u}{\partial x}, \frac{\partial v}{\partial y}$.
+\end{problem}
+\begin{solution}
+    $\begin{cases}
+            (e^u + \sin{v})du + u\cos{v}dv = dx \\
+            (e^u - \cos{v})du + u\sin{v}dv = dy
+        \end{cases}$
+
+    $D = \begin{vmatrix}
+            e^u + \sin{v} & u\cos{v} \\
+            e^u - \cos{v} & u\sin{v}
+        \end{vmatrix}$
+    $ = u + ue^u(\sin{v} - \cos{v})$
+
+    $D_u = \begin{vmatrix}
+            dx & u\cos{v} \\
+            dy & u\sin{v}
+        \end{vmatrix}$
+    $ = u\sin{v}dx - u\cos{v}dy$
+
+    $D_v = \begin{vmatrix}
+            e^u + \sin{v} & dx \\
+            e^u - \cos{v} & dy
+        \end{vmatrix}$
+    $ = (e^u + \sin{v})dy - (e^u - \cos{v})dx$
+
+    $\because du = \frac{D_u}{D} \quad dv = \frac{D_v}{D} \qquad$
+    $\therefore \frac{\partial u}{\partial x} = \frac{\sin{v}}{1 + e^u(\sin{v} - \cos{v})} \quad$
+    $\frac{\partial v}{\partial y} = \frac{e^u + \sin{v}}{u + ue^u(\sin{v} - \cos{v})}$；
 \end{solution}

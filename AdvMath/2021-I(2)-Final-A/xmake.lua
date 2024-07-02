@@ -4,7 +4,7 @@
 -- @author 24bit-xjkp
 -- @email 2283572185@qq.com
 
-target("AdvMath2021-I(2)-Final")
+target("AdvMath2021-I(2)-Final-A")
     add_files("*.tex")
-    set_basename("2021-I(2)-期末")
+    set_basename("2021-I(2)-期末A")
 target_end()
