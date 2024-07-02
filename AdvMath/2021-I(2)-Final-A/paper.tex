@@ -13,13 +13,15 @@
 \end{solution}
 
 \begin{question}[points = 3]
-    设函数 $z = e^{xy}$ ，在点 $(1, 1)$ 处当 $\Delta x = 0.15, \Delta y = 0.1$ 时的全增量 $\Delta z = $ \fillin[$0.25e$]；
+    设函数 $z = e^{xy}$ ，在点 $(1, 1)$ 处当 $\Delta x = 0.15, \Delta y = 0.1$ 时的全微分 $\mathrm{d}z = $
+    \fillin[$\frac{e}{4}$]；
 \end{question}
 \begin{solution}
-    $\because \frac{\partial z}{\partial x} = ye^x \quad \frac{\partial z}{\partial y} = xe^y \qquad
-        \therefore dz = ye^xdx + xe^ydy$ \\
-    $\therefore dz|_{(1, 1)} = edx + edy \qquad
-        \therefore \Delta z = 0.15e + 0.1e = 0.25e$；
+    $\because \frac{\partial z}{\partial x} = ye^x \quad \frac{\partial z}{\partial y} = xe^y \qquad$
+    $\therefore \mathrm{d}z = ye^x\mathrm{d}x + xe^y\mathrm{d}y$
+
+    $\therefore \mathrm{d}z|_{(1, 1)} = e\mathrm{d}x + e\mathrm{d}y \qquad$
+    $\therefore \mathrm{d}z = 0.15e + 0.1e = \frac{e}{4}$；
 \end{solution}
 
 \begin{question}[points = 3]
@@ -210,6 +212,12 @@
 \end{solution}
 
 \section{解答题：本题共 7 小题，共 61 分}
+\examsetup
+{
+    solution/blank-type = manual,
+    % 解答空间设置为30±5ex
+    solution/blank-vsep = 30ex plus 5ex minus 5ex
+}
 
 \begin{problem}[points = 6]
 设 $u(x, y), v(x, y)$ 由方程组 $
@@ -243,7 +251,43 @@
         \end{vmatrix}$
     $ = (e^u + \sin{v})dy - (e^u - \cos{v})dx$
 
-    $\because du = \frac{D_u}{D} \quad dv = \frac{D_v}{D} \qquad$
+    $\because \mathrm{d}u = \frac{D_u}{D} \quad \mathrm{d}v = \frac{D_v}{D} \qquad$
     $\therefore \frac{\partial u}{\partial x} = \frac{\sin{v}}{1 + e^u(\sin{v} - \cos{v})} \quad$
     $\frac{\partial v}{\partial y} = \frac{e^u + \sin{v}}{u + ue^u(\sin{v} - \cos{v})}$；
+\end{solution}
+
+\begin{problem}[points = 7]
+设 $\Sigma$ 是球面 $x^2 + y^2 + z^2 = 4 (z \geq 0)$ 的外侧，计算曲面积分
+$\iint\limits_{\Sigma} yz\mathrm{d}z\mathrm{d}x + 2 \mathrm{d}x\mathrm{d}y$.
+\end{problem}
+\begin{solution}
+    $\Sigma: x^2 + y^2 + z^2 = 4 , z \geq 0$ ，上侧 $\qquad$
+    $\Sigma': x^2 + y^2 \leq 4, z = 0$ ，下侧
+
+    $\iiint\limits_{\Omega} z\mathrm{d}V = \int\limits_{0}^{2} \pi z(4 - z^2)\mathrm{d}z = 4\pi \qquad$
+    $\iint\limits_{\Sigma'} yz\mathrm{d}z\mathrm{d}x + 2 \mathrm{d}x\mathrm{d}$
+    $= -\iint\limits_{D} 2\mathrm{d}\sigma = -8\pi$
+
+    $\therefore \iint\limits_{\Sigma} yz\mathrm{d}z\mathrm{d}x + 2 \mathrm{d}x\mathrm{d}y$
+    $= \iiint\limits_{\Omega} - \iint\limits_{\Sigma'} = 12\pi$
+\end{solution}
+
+\begin{problem}[points = 6]
+求微分方程 $(xy^2 + y - 1)\mathrm{d}x + (x^y + x + 2)\mathrm{d}y = 0$ 的通解.
+\end{problem}
+\begin{solution}
+    $P = xy^2 + y - 1 \qquad Q = xy + x + 2$
+
+    $\frac{\partial P}{\partial y} = 2xy + 1 \qquad \frac{\partial Q}{\partial x} = 2xy + 1$
+
+    $\therefore \exists \mathrm{d}u = P\mathrm{d}x + Q\mathrm{d}y$
+
+    $\because \int \mathrm{d}u = \int P\mathrm{d}x \qquad$
+    $\therefore u = \frac{1}{2}x^2y^2 + xy - x + C(y)$
+
+    $\because \frac{\partial u}{\partial y} = x^y + x + C^{\prime} = \frac{\partial Q}{\partial x} \qquad$
+    $\therefore C^{\prime} = 2 \qquad \therefore C(y) = 2y + C$
+
+    $\therefore u = \frac{1}{2}x^2y^2 + xy - x + 2y + C \qquad$
+    即 $\frac{1}{2}x^2y^2 + xy - x + 2y = C$
 \end{solution}
