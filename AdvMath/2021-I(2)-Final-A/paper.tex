@@ -1,0 +1,450 @@
+% @file paper.tex
+% @brief 2021高等数学I(2)期末考题
+% @author 24bit-xjkp
+% @email 2283572185@qq.com
+
+\section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
+
+\begin{question}[points = 3]
+    极限 $\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = $ \fillin[1]；
+\end{question}
+\begin{solution}
+    分子分母极限均存在，直接计算即可。 $\lim\limits_{x \to 0 \atop y \to 1} \frac{1 - xy}{x^2 + y^2} = 1$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设函数 $z = e^{xy}$ ，在点 $(1, 1)$ 处当 $\Delta x = 0.15, \Delta y = 0.1$ 时的全微分 $\mathrm{d}z = $
+    \fillin[$\frac{e}{4}$]；
+\end{question}
+\begin{solution}
+    $\because \frac{\partial z}{\partial x} = ye^x \quad \frac{\partial z}{\partial y} = xe^y \qquad$
+    $\therefore \mathrm{d}z = ye^x\mathrm{d}x + xe^y\mathrm{d}y$
+
+    $\therefore \mathrm{d}z|_{(1, 1)} = e\mathrm{d}x + e\mathrm{d}y \qquad$
+    $\therefore \mathrm{d}z = 0.15e + 0.1e = \frac{e}{4}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    曲面 $e^z - z + xy = 3$ 在点 $(2, 1, 0)$ 处的切平面方程为 \fillin[$x + 2y = 4$]；
+\end{question}
+\begin{solution}
+    令 $F(x, y, z) = e^z - z + zy - 3$
+
+    $\therefore \frac{\partial F}{\partial x} = y \quad \frac{\partial F}{\partial y} = x \quad \frac{\partial F}{\partial z} = e^z - 1$
+
+    $\therefore \frac{\partial F}{\partial x}|_{(2, 1, 0)} = 1 \quad$
+    $\frac{\partial F}{\partial y}|_{(2, 1, 0)} = 2 \quad$
+    $\frac{\partial F}{\partial z}|_{(2, 1, 0)} = 0$
+
+    $\therefore \vec{n} = (1, 2, 0) \qquad$
+    $\therefore \Pi: (x - 2) + 2(y - 1) = 0 \qquad$
+    $\therefore \Pi: x + 2y = 4$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\Sigma$ 为球面 $x^2 + y^2 + z^2 = 1$ ，则球面上的点 $\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$
+    处指向球面内侧的单位法向量为 \fillin[$\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$]；
+\end{question}
+\begin{solution}
+    令 $F(x, y, z) = x^2 + y^2 + z^2 - 1$
+
+    $\therefore \frac{\partial F}{\partial x} = 2x \quad \frac{\partial F}{\partial y} = 2y \quad \frac{\partial F}{\partial z} = 2z$
+
+    $\therefore \frac{\partial F}{\partial x}|_{\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)} = \frac{2}{\sqrt{3}} \quad$
+    $\frac{\partial F}{\partial y}|_{\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)} = \frac{2}{\sqrt{3}}$
+    $\quad \frac{\partial F}{\partial z}|_{\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)} = \frac{2}{\sqrt{3}}$
+
+    $\therefore \vec{n} = \left(\frac{2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right) \qquad$
+    $\therefore \vec{n^0} = \left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设向量场 $A = x(1 + x^2z)\vec{i} + y(1 - x^2z)\vec{j} + z(1 - x^2z)\vec{k}$，
+    则其在点 $M(1, 2, -1)$ 处的散度 $\mathrm{div} \, \vec{A}|_M = $ \fillin[3]；
+\end{question}
+\begin{solution}
+    $\because \nabla\cdot\vec{M} = (1 + 3x^2z) + (1-x^2z) + (1-2x^2z) = 3$
+
+    $\therefore \mathrm{div} \, \vec{A}|_M = 3$；
+\end{solution}
+
+\begin{question}[points = 3]
+    若 $|q| < 1$ ，则级数 $\sum\limits_{n = 1}^{\infty} aq^n$ 的和为 \fillin[$\frac{aq}{1 - q}$]；
+\end{question}
+\begin{solution}
+    令 $b_n = aq^n \qquad \therefore b_1 = aq \qquad \therefore s_n = \frac{aq(1 - q^n)}{1 - q}$
+
+    $\therefore \sum\limits_{n = 1}^{\infty} aq^n = \lim\limits_{n \to \infty} s_n = \frac{aq}{1 - q}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\lim\limits_{n \to \infty} |\frac{a_{n + 1}}{a_n}| = 2$ ，则级数 $\sum\limits_{n = 1}^{\infty} \frac{a_n}{3^n}(x + 3)^n$
+    的收敛半径 $R = $ \fillin[$\frac{3}{2}$]；
+\end{question}
+\begin{solution}
+    令 $t = x + 3, b_n = \frac{a_n}{3^n} \qquad \therefore s_n = \sum\limits_{n = 1}^{\infty} b_n t^n$
+
+    $\therefore \rho = \lim\limits_{n \to \infty} |\frac{b_{n + 1}}{b_n}| = |\frac{a_{n + 1}}{3 a_n}| = \frac{2}{3} \qquad$
+    $\therefore R = \frac{1}{\rho} = \frac{3}{2}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    $f(x) =
+        \begin{cases}
+            -x, -\pi < x \leq 0 \\
+            0, 0 < x \leq \pi
+        \end{cases}$，
+    $s(x)$ 为 $f(x)$ 的以 $2\pi$ 为周期的傅里叶级数的和函数，
+    则$s(\pi) + s(-\pi) = $\fillin[$\pi$]；
+\end{question}
+\begin{solution}
+    $\because x = \pi$ 是 $f(x)$ 的间断点 $\qquad \therefore s(\pi) = \frac{1}{2}[f(\pi^-) + f(\pi^+)] = \frac{1}{2}[0 + \pi] = \frac{\pi}{2}$
+
+    同理 $s(-\pi) = \frac{\pi}{2} \qquad \therefore s(\pi) + s(-\pi) = \pi$；
+\end{solution}
+
+\begin{question}[points = 3]
+    微分方程 $y^{\prime\prime} = -\frac{3}{x}y^{\prime} + 1 (x > 0)$ 满足初始条件 $y|_{z = 1} = 0, \, y^{\prime}|_{z = 1} = 1$
+    的特解为 \fillin[$y = \frac{x^2}{8} - \frac{3}{8}x^{-2} + \frac{1}{4}$]；
+\end{question}
+\begin{solution}
+    令 $f(x) = y^{\prime} \qquad \therefore f^{\prime} = -\frac{3}{x}f + 1 \qquad$
+    $\therefore \int\frac{df}{f} = \int -\frac{3}{x} + \frac{1}{f} dx$
+
+    $\therefore \ln f = -3\ln x + \int\frac{1}{f}dx \qquad$
+    $\therefore f = x^{-3}C(x)$
+
+    将 $f$ 带回方程 $-3x^{-4}C + x^{-3}C^{\prime} = -3x^{-4}C + 1 \qquad \therefore C^{\prime} = x^3 \qquad$
+    $\therefore C(x) = \frac{x^4}{4} + C_1$
+
+    $\therefore f = \frac{x}{4} + C_1x^{-3} \qquad$
+    又 $\because f|_{x = 1} = y^{\prime}|_{z = 1} = 1 \qquad$
+    $C_1 = \frac{3}{4} \qquad \therefore f = \frac{x}{4} + \frac{3}{4}x^{-3}$
+
+    又 $\because f = y^{\prime} \qquad \therefore \int y dy = \int \frac{x}{4} + \frac{3}{4}x^{-3} dx \qquad$
+    $\therefore y = \frac{x^2}{8} - \frac{3}{8}x^{-2} + C_2$
+
+    又 $\because y|_{z = 1} = 0 \qquad \therefore C_2 = \frac{1}{4} \qquad$
+    $\therefore y = \frac{x^2}{8} - \frac{3}{8}x^{-2} + \frac{1}{4}$；
+\end{solution}
+
+\begin{question}
+    已知 $y_1 = xe^x + e^{2x}, \, y_2 = xe^x, \, y_3 = xe^x + e^{2x} - e^{-x}$ 是二阶常系数线性齐次微分方程
+    $y^{\prime\prime} + py^{\prime} + qy = e^x - 2xe^x$ 的三个特解，则此微分方程为
+    \fillin[$y^{\prime\prime} - y^{\prime} - 2y = e^x - 2xe^x$]；
+\end{question}
+\begin{solution}
+    $\because$ 观察特解 $y_1, y_2, y_3$ 可知，对于 $e^{\mu x}$ ，存在 $\mu_1 = 1, \mu_2 = 2, \mu_3 = -1$
+
+    又 $\because$ 非齐次部分 $e^x - 2xe^x = e^x(1 - 2x)$ ，注意到公因式为 $e^x$
+
+    $\therefore$ 特解 $y^*$ 满足 $y^* = e^x(ax + b)$ 形式 $\qquad$
+    $\therefore \mu = 1$ 不是特征方程 $\lambda^2 + p\lambda + q = 0$ 的解
+
+    $\therefore$ 特征方程的解 $\lambda_1 = 2, \lambda_2 = -1 \qquad$
+    $\therefore$ 特征方程为 $(\lambda - 2)(\lambda + 1) = 0$
+
+    $\therefore \lambda^2 - \lambda - 2 = 0 \qquad$
+    $\therefore$ 根据特征方程反推得原微分方程 $y^{\prime\prime} - y^{\prime} - 2y = e^x - 2xe^x$；
+\end{solution}
+
+\section{选择题：本题共 3 小题，每小题 3 分，共 9 分}
+
+\begin{question}[points = 3]
+    已知 $f(x, y) = e^{\sqrt{x^4 + y^2}}$ ，则 \,\paren[C]
+\end{question}
+\begin{choices}
+    \item $f_x(0, 0), f_y(0, 0)$ 都存在
+    \item $f_x(0, 0), f_y(0, 0)$ 都不存在
+    \item $f_x(0, 0)$ 存在， $f_y(0, 0)$ 不存在
+    \item $f_x(0, 0)$ 不存在， $f_y(0, 0)$ 存在
+\end{choices}
+\begin{solution}
+    $\because f(0, 0) = e^{\sqrt{0^4 + 0^2}} = 1$
+
+    $\therefore f_x(0, 0) = \lim\limits_{\Delta x \to 0} \frac{e^{\sqrt{{\Delta x}^4 + 0^2}} - f(0, 0)}{\Delta x}$
+    $= \lim\limits_{\Delta x \to 0} \frac{e^{{\Delta x}^2} - 1}{\Delta x} = \lim\limits_{\Delta x \to 0} \frac{{\Delta x}^2}{\Delta x} = 0$
+
+    $\therefore f_y(0, 0) = \lim\limits_{\Delta y \to 0} \frac{e^{\sqrt{0^4 + {\Delta y}^2}} - f(0, 0)}{\Delta y}$
+    $= \lim\limits_{\Delta y \to 0} \frac{e^{ |\Delta y| } - 1}{\Delta y}$
+
+    又 $\because \lim\limits_{\Delta y \to 0^+} \frac{e^{ |\Delta y| } - 1}{\Delta y} = \lim\limits_{\Delta y \to 0^+} \frac{\Delta y}{\Delta y} = 1 \qquad$
+    $\lim\limits_{\Delta y \to 0^-} \frac{e^{ |\Delta y| } - 1}{\Delta y} = \lim\limits_{\Delta y \to 0^-} \frac{-\Delta y}{\Delta y} = -1$
+
+    $\therefore f_x(0, 0)$ 存在， $f_y(0, 0)$ 不存在；
+\end{solution}
+
+\begin{question}[points = 3]
+    设函数 $f(x, y)$ 为平面上连续函数，则 $\int_{-1}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy = $ \, \paren[A]
+\end{question}
+\begin{choices}
+    \item $2 \int_{0}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy$
+    \item $4 \int_{0}^{1}dx \int_{0}^{x} yf(x^2, y^2)dy$
+    \item $2 \int_{0}^{1}dy \int_{-y}^{y} yf(x^2, y^2)dy$
+    \item $0$
+\end{choices}
+\begin{solution}
+    $\because$ 积分区域 $D$ 为 $x \in [-1 ,1], y \in [0, 1]$ ，关于 $y$ 轴对称
+
+    又 $\because$ 被积函数 $yf(x^2, y^2)$ 是 $x$ 的奇函数
+
+    $\therefore \int_{-1}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy = 2 \int_{0}^{1}dx \int_{0}^{1} yf(x^2, y^2)dy$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $u_n > 0 (n = 1, 2, \cdots)$ ，若 $\lim\limits_{n \to \infty} n^2 u_n = l (0 < l < + \infty)$ ，
+    则交错级数 $\sum\limits_{n = 1}^{\infty} (-1)^n u_n$ \, \paren[A]
+\end{question}
+\begin{choices}
+    \item 绝对收敛
+    \item 条件收敛
+    \item 发散
+    \item 不能确定其敛散性
+\end{choices}
+\begin{solution}
+    $\because \lim\limits_{n \to \infty} n^2 u_n = \lim\limits_{n \to \infty} \frac{u_n}{\frac{1}{n^2}} = l (0 < l < + \infty)$
+
+    $\therefore \sum\limits_{n = 1}^{\infty} u_n$ 的敛散性与 $\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ 相同 $\qquad$
+    又 $\because \sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ 收敛 $\qquad$
+    $\therefore \sum\limits_{n = 1}^{\infty} u_n$ 收敛
+
+    $\therefore \sum\limits_{n = 1}^{\infty} (-1)^n u_n$ 绝对收敛；
+\end{solution}
+
+\section{解答题：本题共 7 小题，共 61 分}
+\examsetup
+{
+    solution/blank-type = manual,
+    % 解答空间设置为25±5ex
+    solution/blank-vsep = 25ex plus 5ex minus 5ex
+}
+
+\begin{problem}[points = 6]
+设 $u(x, y), v(x, y)$ 由方程组 $
+    \begin{cases}
+        x = e^u + u\sin{v} \\
+        y = e^u - u\cos{v}
+    \end{cases}$
+确定，求 $\frac{\partial u}{\partial x}, \frac{\partial v}{\partial y}$.
+\end{problem}
+\begin{solution}
+    $\begin{cases}
+            (e^u + \sin{v})du + u\cos{v}dv = dx \\
+            (e^u - \cos{v})du + u\sin{v}dv = dy
+        \end{cases}$
+
+    $D = \begin{vmatrix}
+            e^u + \sin{v} & u\cos{v} \\
+            e^u - \cos{v} & u\sin{v}
+        \end{vmatrix}$
+    $ = u + ue^u(\sin{v} - \cos{v})$
+
+    $D_u = \begin{vmatrix}
+            dx & u\cos{v} \\
+            dy & u\sin{v}
+        \end{vmatrix}$
+    $ = u\sin{v}dx - u\cos{v}dy$
+
+    $D_v = \begin{vmatrix}
+            e^u + \sin{v} & dx \\
+            e^u - \cos{v} & dy
+        \end{vmatrix}$
+    $ = (e^u + \sin{v})dy - (e^u - \cos{v})dx$
+
+    $\because \mathrm{d}u = \frac{D_u}{D} \quad \mathrm{d}v = \frac{D_v}{D} \qquad$
+    $\therefore \frac{\partial u}{\partial x} = \frac{\sin{v}}{1 + e^u(\sin{v} - \cos{v})} \quad$
+    $\frac{\partial v}{\partial y} = \frac{e^u + \sin{v}}{u + ue^u(\sin{v} - \cos{v})}$；
+\end{solution}
+
+\begin{problem}[points = 7]
+设 $\Sigma$ 是球面 $x^2 + y^2 + z^2 = 4 (z \geq 0)$ 的外侧，计算曲面积分
+$\iint\limits_{\Sigma} yz\mathrm{d}z\mathrm{d}x + 2 \mathrm{d}x\mathrm{d}y$.
+\end{problem}
+\begin{solution}
+    $\Sigma: x^2 + y^2 + z^2 = 4 , z \geq 0$ ，上侧 $\qquad$
+    $\Sigma': x^2 + y^2 \leq 4, z = 0$ ，下侧
+
+    $\iiint\limits_{\Omega} z\mathrm{d}V = \int\limits_{0}^{2} \pi z(4 - z^2)\mathrm{d}z = 4\pi \qquad$
+    $\iint\limits_{\Sigma'} yz\mathrm{d}z\mathrm{d}x + 2 \mathrm{d}x\mathrm{d}$
+    $= -\iint\limits_{D} 2\mathrm{d}\sigma = -8\pi$
+
+    $\therefore \iint\limits_{\Sigma} yz\mathrm{d}z\mathrm{d}x + 2 \mathrm{d}x\mathrm{d}y$
+    $= \iiint\limits_{\Omega} - \iint\limits_{\Sigma'} = 12\pi$
+\end{solution}
+
+\begin{problem}[points = 6]
+求微分方程 $(xy^2 + y - 1)\mathrm{d}x + (x^y + x + 2)\mathrm{d}y = 0$ 的通解.
+\end{problem}
+\begin{solution}
+    $P = xy^2 + y - 1 \qquad Q = xy + x + 2$
+
+    $\frac{\partial P}{\partial y} = 2xy + 1 \qquad \frac{\partial Q}{\partial x} = 2xy + 1$
+
+    $\therefore \exists \mathrm{d}u = P\mathrm{d}x + Q\mathrm{d}y$
+
+    $\because \int \mathrm{d}u = \int P\mathrm{d}x \qquad$
+    $\therefore u = \frac{1}{2}x^2y^2 + xy - x + C(y)$
+
+    $\because \frac{\partial u}{\partial y} = x^y + x + C^{\prime} = \frac{\partial Q}{\partial x} \qquad$
+    $\therefore C^{\prime} = 2 \qquad \therefore C(y) = 2y + C$
+
+    $\therefore u = \frac{1}{2}x^2y^2 + xy - x + 2y + C \qquad$
+    即 $\frac{1}{2}x^2y^2 + xy - x + 2y = C$；
+\end{solution}
+
+\begin{problem}[points = 7]
+将 $f(x) = \frac{1}{x^2 - 4x + 3}$ 展开成 $x$ 的幂级数.
+\end{problem}
+\begin{solution}
+    $f(x) = \frac{1}{(x - 1)(x - 3)} = \frac{1}{2}\left(\frac{1}{x - 3} - \frac{1}{x - 1}\right)$
+    $= \frac{1}{2(x - 1)} - \frac{1}{6\left(1 - \frac{x}{3}\right)}$
+
+    $\therefore f(x) = \frac{1}{2}\sum\limits_{n = 0}^{\infty} x^n - \frac{1}{6}\sum\limits_{n = 0}^{\infty} \frac{x^n}{3^n}$
+    $=\sum\limits_{n = 0}^{\infty} \left(\frac{1}{2} - \frac{1}{6 \cdot 3^n}\right)x^n$；
+\end{solution}
+
+\begin{problem}[points = 9]
+试判断以下级数是发散、条件收敛还是绝对收敛，并说明理由.
+\end{problem}
+\begin{calculations}[columns = 3, label = (\arabic*)]
+    \item $\sum\limits_{n = 1}^{\infty} e^n\sin{\frac{\pi}{3^n}}$
+    \item $\sum\limits_{n = 1}^{\infty} \frac{(-1)^n - \sqrt{n}}{n + 1}$
+    \item $\sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n - \ln{n}}$
+\end{calculations}
+\begin{solution}
+    \begin{calculations}[columns = 3, label = (\arabic*)]
+        \item 令 $u_n = e^n\sin{\frac{\pi}{3^n}}$
+
+        $\begin{aligned}
+                  & \lim\limits_{n \to \infty} \frac{u_{n + 1}}{u_n}                                  \\
+                = & \lim\limits_{n \to \infty} \frac{e\sin{\frac{\pi}{3^{n + 1}}}}{\sin{\frac{\pi}{3^n}}} \\
+                = & \lim\limits_{n \to \infty} \frac{e\frac{\pi}{3^{n + 1}}}{\frac{\pi}{3^n}}             \\
+                = & \frac{e}{3} < 1
+            \end{aligned}$
+
+        $\therefore$ 原级数收敛；
+
+        \item $\sum\limits_{n = 1}^{\infty} \frac{(-1)^n - \sqrt{n}}{n + 1}$ \\
+        $ = \sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n + 1} - \sum\limits_{n = 1}^{\infty} \frac{\sqrt{n}}{n + 1}$
+
+        令 $u_n = \frac{1}{n + 1}$ \\
+        $\because \lim\limits_{n \to \infty} \frac{1}{n + 1} = 0 \quad u_{n + 1} < u_n$ \\
+        又 $\because \sum\limits_{n =1}^{\infty} u_n$ 发散 \\
+        $\therefore \sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n + 1}$ 条件收敛
+
+        令 $v_n = \frac{\sqrt{n}}{n + 1}$ \\
+        $\because \lim\limits_{n \to \infty} \frac{v_n}{\frac{1}{n + 1}} = \lim\limits_{n \to \infty} \sqrt{n} = +\infty$ \\
+        又 $\because \sum\limits_{n = 1}^{\infty} \frac{1}{n + 1}$ 发散 \\
+        $\therefore \sum\limits_{n = 1}^{\infty} \frac{\sqrt{n}}{n + 1}$ 发散 \\
+        $\therefore$ 原级数收敛；
+
+        \item 令 $u_n =  \frac{1}{n - \ln{n}}$\\
+        $\because u_n > \frac{1}{n} \quad \sum\limits_{n = 1}^{\infty} \frac{1}{n}$ 发散 \\
+        $\therefore \sum\limits_{n = 1}^{\infty} u_n$ 发散
+
+        $\because \frac{1}{u_{n + 1}} - \frac{1}{u_n}$\\
+        $= 1 - \ln\left(1 + \frac{1}{n}\right) > 0$\\
+        $\therefore u_n > u_{n + 1}$
+
+        又 $\because \lim\limits_{n \to \infty} u_n = 0$ \\
+        $\therefore$ 原级数条件收敛；
+    \end{calculations}
+\end{solution}
+
+\begin{problem}[points = 7]
+求微分方程 $y^{\prime\prime} - 2y^{\prime} - 3y = x^2 + 2x + 1$ 的通解.
+\end{problem}
+\begin{solution}
+    特征方程 $\lambda^2 - 2\lambda - 3 = 0 \qquad \therefore \lambda_1 = 3 \quad \lambda_2 = -1$
+
+    $\because \mu = 0$ 不是特征方程的根 $\qquad \therefore$ 设 $Q_m = ax^2 + bx + c \qquad$
+    $\therefore Q_m^{\prime} = 2ax + b \quad Q_m^{\prime\prime} = 2a$
+
+    $\because Q_m^{\prime\prime} + (2\mu + p)Q_m^{\prime} + (\mu^2 + p\mu + q)Q_m = x^2 + 2x + 1$
+
+    $\therefore \begin{cases}
+            a = -\frac{1}{3} \\
+            b = -\frac{2}{9} \\
+            c = -\frac{11}{27}
+        \end{cases} \qquad$
+    $\therefore y = C_1e^{3x} + C_2e^{-x} - \frac{1}{3}x^2 - \frac{2}{9}x - \frac{11}{27}$；
+\end{solution}
+
+\begin{problem}[points = 7]
+设 $f(x) = e^x - \int_{0}^{x} (x - t)f(t)\mathrm{d}t$ ，其中 $f(x)$ 连续，求 $f(x)$.
+\end{problem}
+\begin{solution}
+    $\because f(x) = e^x - x\int_{0}^{x} f(t)\mathrm{d}t + \int_{0}^{x} tf(t)\mathrm{d}t$
+
+    $\therefore f^{\prime} = e^x - \int_{0}^{x} f(t)\mathrm{d}t - xf(x) + xf(x) = e^x - \int_{0}^{x} f(t)\mathrm{d}t \qquad$
+    $\therefore f^{\prime\prime} = e^x - f \qquad \therefore f^{\prime\prime} + f = e^x$
+
+    特征方程 $\lambda^2 + 1 = 0 \qquad \therefore \lambda_1 = i \quad \lambda_2 = -i$
+
+    $\mu = 1$ 不是特征方程的根 $\qquad \therefore$ 设 $Q_m = a \qquad \therefore Q_m^{\prime\prime} = Q_m^{\prime} = 0$
+
+    $\because Q_m^{\prime\prime} + (2\mu + p)Q_m^{\prime} + (\mu^2 + p\mu + q)Q_m = e^x \qquad \therefore a = \frac{1}{2}$
+
+    $\therefore f = C_1\cos{x} + C_2\sin{x} + \frac{1}{2}e^x \qquad \therefore f^{\prime} = -C_1\sin{x} + C_2\cos{x} + \frac{1}{2}e^x$
+
+    $\because \begin{cases}
+            f(0) = C_1 + \frac{1}{2} = 1 \\
+            f^{\prime}(0) = C_2 + \frac{1}{2} = 1
+        \end{cases} \qquad$
+    $\therefore \begin{cases}
+            C_1 = \frac{1}{2} \\
+            C_2 = \frac{1}{2}
+        \end{cases} \qquad$
+    $\therefore f(x) = -\frac{1}{2}\sin{x} + \frac{1}{2}\cos{x} + \frac{1}{2}e^x$；
+\end{solution}
+
+\begin{problem}[points = 7]
+求幂级数 $\sum\limits_{n = 1}^{\infty} n^2x^{n - 1}$ 的收敛域与和函数.
+\end{problem}
+\begin{solution}
+    令 $u_n = n^2x^{n - 1}$
+
+    $\therefore \lim\limits_{n \to \infty} \frac{u_{n + 1}}{u_n}$
+    $= \lim\limits_{n \to \infty} \left(1 + \frac{2}{n} + \frac{1}{n^2}\right) = x \qquad$
+    $\therefore R = 1$
+
+    当 $x = \pm 1$ 时 $\qquad\because \lim\limits_{n \to \infty} u_n \neq 0 \qquad$
+    $\therefore$ 收敛域为 $(-1, 1)$
+
+    令 $s(x) = \sum\limits_{n = 1}^{\infty} n^2x^{n - 1} \qquad \therefore \int_0^x s(x)\mathrm{d}x =$
+    $\int_0^x \left(\sum\limits_{n = 1}^{\infty} n^2x^{n - 1}\right)\mathrm{d}x$
+
+    令 $S(x) = \int_0^x s(x)\mathrm{d}x \qquad \therefore S(x) = \sum\limits_{n = 1}^{\infty} nx^n \qquad$
+    $\therefore \frac{S(x)}{x} = \sum\limits_{n = 1}^{\infty} nx^{n - 1}$
+
+    $\therefore \int_0^x \frac{S(x)}{x}\mathrm{d}x = \int_0^x \left(\sum\limits_{n = 1}^{\infty} nx^{n - 1}\right)\mathrm{d}x$
+    $= \sum\limits_{n = 1}^{\infty} x^n = \frac{x}{1 - x}$
+
+    $\therefore \frac{S(x)}{x} = \frac{1}{(1 - x)^2} \qquad \therefore S(x) = \frac{x}{(1 - x)^2} \qquad$
+    $\therefore \int_0^x s(x)\mathrm{d}x = \frac{x}{(1 - x)^2}$
+
+    $\therefore s(x) = \frac{(1 - x)^ 2 + 2(1 - x)x}{(1 - x)^4} = \frac{1 + x}{(1 - x)^3}$
+
+    $\because s(0) = 0 \qquad$
+    $\therefore s(x) = \begin{cases}
+            \frac{1 + x}{(1 - x)^3}, x \in (-1, 0) \cup (0, 1) \\
+            0, x = 0
+        \end{cases}$；
+\end{solution}
+
+\begin{problem}[points = 5]
+设 $f(x)$ 为正值连续函数，试证明不等式 $\oint_L \frac{-y}{f(x)}\mathrm{d}x + xf(y)\mathrm{d}y \geq 2\pi a^2$ ，
+其中 $L$ 是圆周 $(x - a)^2 + (y - a)^2 = a^2 (a > 0)$ ，取逆时针方向.
+\end{problem}
+\begin{solution}
+    $\because P = \frac{-y}{f(x)} \quad Q = xf(y) \qquad \therefore$
+    $\frac{\partial P}{\partial y} = \frac{-1}{f(x)} \quad \frac{\partial Q}{\partial x} = f(y)$
+
+    $\therefore I = \oint \frac{-y}{f(x)}\mathrm{d}x + xf(y)\mathrm{d}y = \iint\limits_D f(y) + \frac{1}{f(x)} \mathrm{d}\sigma$
+    $= \iint\limits_D f(x) + \frac{1}{f(x)} \mathrm{d}\sigma$
+
+    $\because f(x)$ 为正值连续函数 $\qquad \therefore f(x) > 0 \quad \frac{1}{f(x)} > 0$
+
+    $\therefore f(x) + \frac{1}{f(x)} \geq 2\sqrt{f(x) \cdot \frac{1}{f(x)}} = 2 \qquad$
+    $\therefore I \geq \iint\limits_D 2\mathrm{d}\sigma = 2\pi a^2 \qquad \therefore$ 原题得证；
+\end{solution}

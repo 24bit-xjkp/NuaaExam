@@ -1,0 +1,29 @@
+% @file 高等数学2021-I(2)-期末.tex
+% @brief 章节包装
+% @author 24bit-xjkp
+% @email 2283572185@qq.com
+% @url https://file.notion.so/f/f/a21543f8-3928-48a7-9c50-42d5136f6201/5ccd7104-21c7-4e24-b551-221d0ce15bc5/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6(2)21%E6%9C%9F%E6%9C%ABA.pdf?id=32008910-5b8d-44d0-a65e-16bd37ff6552&table=block&spaceId=a21543f8-3928-48a7-9c50-42d5136f6201&expirationTimestamp=1720087200000&signature=R0cJvW-cudJUt0CSuk-SQ396m3g1Lj7g5mf9Znt3Kao
+
+\documentclass{exam-zh}
+
+\title{南京航空航天大学}
+\subject{2021《高等数学I(2)》期末考试试题}
+
+\begin{document}
+\maketitle
+
+\input{../../template/chapter1.tex}
+\input{paper.tex}
+
+% 混合模式时生成第二章，内容不变
+\ifdefstring{\Solution}{mixed}
+{
+    \input{../../template/chapter2.tex}
+    \input{paper.tex}
+}{}
+
+\def\Auther{24bit-xjkp}
+\def\AutherEmail{2283572185@qq.com}
+
+\input{../../template/postscript.tex}
+\end{document}
