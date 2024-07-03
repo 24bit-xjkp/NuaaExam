@@ -10,15 +10,26 @@ option("solution")
     set_values("inline", "backend", "hidden", "mixed")
     set_default("backend")
     -- 控制解答的显示方式
-    set_description("Set the solution display mode.\n"..
+    set_description("Set the solution display mode.",
     -- inline  在题目后显示解答
-    "\t- inline  Show the solutions under the questions.\n"..
+    "\t- inline  Show the solutions under the questions.",
     -- backend 在试卷最后显示解答
-    "\t- backend Show the solutions at the end of the paper.\n"..
+    "\t- backend Show the solutions at the end of the paper.",
     -- hidden  不显示解答
-    "\t- hidden  Do not show the solutions.\n"..
+    "\t- hidden  Do not show the solutions.",
     -- mixed   先生成hidden的章节，再生成inline的章节
     "\t- mixed   Generate hidden chapter first, then generate inline chapter.")
+option_end()
+option("suffix")
+    set_default("none")
+    -- 是否添加文件名后缀
+    set_description("Whether to add a suffix to the file name.",
+    -- none  不添加文件名后缀
+    "\t- none   Do not add a suffix to the file name.",
+    -- mode  根据解答显示方式自动添加后缀
+    "\t- mode   Add a suffix to the file name based on the solution display mode.",
+    -- string 添加自定义后缀
+    "\t- string Add a custom string as the suffix to the file name(string is any string except for the above two options).")
 option_end()
 
 rule("latex")
@@ -26,6 +37,14 @@ rule("latex")
     -- 扩展名必须设置成pdf，否则安装时会报目标未构建
     on_load(function (target)
         assert(path.extension(target:targetfile()) == ".pdf" or target:kind() == "phony")
+
+        local suffix = get_config("suffix")
+        if suffix == "mode" then
+            local solution = get_config("solution")
+            target:set("suffixname", "-"..solution:sub(1, 1):upper()..solution:sub(2))
+        elseif suffix ~= "none" then
+            target:set("suffixname", "-"..suffix)
+        end
     end)
     on_build_files(function (target, sourcebatch, opt)
         import("core.project.depend")
@@ -101,7 +120,6 @@ rule("latex")
         end
     end)
 rule_end()
-
 
 add_rules("latex")
 set_extension(".pdf")
