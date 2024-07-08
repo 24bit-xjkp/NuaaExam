@@ -2,3 +2,130 @@
 % @brief 2022高等数学I(2)期末考题A
 % @author 24bit-xjkp
 % @email 2283572185@qq.com
+
+\section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
+
+\begin{question}[points = 3]
+    $\lim\limits_{(x, y) \to (0, 0)} \frac{2 - \sqrt{xy + 4}}{xy} = $ \fillin[]；
+\end{question}
+
+\begin{question}[points = 3]
+    若函数 $f(x, y) = x^2y + e^{xy},\, M(1,1)$ ，则 $\mathrm{d}f|_M = $ \fillin[]；
+\end{question}
+
+\begin{question}[points = 3]
+    若函数 $f(x, y, z) = xyz$ ，则 $\mathrm{div}(\mathrm{grad}f) = $ \fillin[]；
+\end{question}
+
+\begin{question}[points = 3]
+    设 $\Sigma$ 是上球面 $z = \sqrt{4 - x^2 - y^2}$ ，则
+    $\iint\limits_\Sigma \left(\frac{1}{\sqrt{x^2 + y^2 + z^2}} + xyz\right)\mathrm{d}S = $ \fillin[]；
+\end{question}
+
+\begin{question}[points = 3]
+    设 $L$ 为 $x^2 + y^2 = 1$ 正向封闭曲线，则曲线积分 $\oint_L \frac{y\mathrm{d}x + x\mathrm{d}y}{x^2 + y^2} = $ \fillin[]；
+\end{question}
+
+\begin{question}[points = 3]
+    如果幂级数 $\sum\limits_{n = 0}^{\infty} a_nx^n$ 当 $x = 2$ 时收敛，
+    则级数 $\sum\limits_{n = 0}^{\infty} (-1)^na_n = $ \fillin[] （填条件收敛、绝对收敛、发散）；
+\end{question}
+
+\begin{question}[points = 3]
+    微分方程 $y^{\prime} + y\tan{x} = \cos{x}$ 的通解为 \fillin[]；
+\end{question}
+
+\begin{question}[points = 3]
+    微分方程 $(1 - x^2)y^{\prime\prime} - xy^{\prime} = 0$ 满足初始条件
+    $y|_{x = 0} = 0,\, y^{\prime}|_{x = 0} = 1$ 的特解为 \fillin[]；
+\end{question}
+
+\section{选择题：本题共 3 小题，每小题 3 分，共 9 分}
+
+\begin{question}[points = 3]
+    设 $(x_0, y_0)$ 是函数 $f(x, y)$ 定义域内的一点，则在点 $(x_0, y_0)$ 处，下列命题正确的是 \paren[]
+\end{question}
+\begin{choices}
+    \item 若函数 $z = f(x, y)$ 作为任一变量 $x$ 或 $y$ 的一元函数都连续，则 $z = f(x, y)$ 必连续.
+    \item 若函数 $z = f(x, y)$ 不连续，则 $z = f(x, y)$ 偏导数必不存在.
+    \item 若函数 $z = f(x, y)$ 可微，则 $z = f(x, y)$ 在 $(x_0, y_0)$ 延任一方向的方向导数存在.
+    \item 若函数 $z = f(x, y)$ 可微，则必存在一阶连续偏导数.
+\end{choices}
+
+\begin{question}[points = 3]
+    若 $\oiint\limits_\Sigma P\mathrm{d}y\mathrm{d}z + Q\mathrm{d}z\mathrm{d}x + R\mathrm{d}x\mathrm{d}y$
+    $= \oiint\limits_\Sigma (P\cos{\alpha} + Q\cos{\beta} + R\cos{\gamma})\mathrm{d}S$ 等式成立，侧 $\cos{\alpha}, \cos{\beta}, \cos{\gamma}$ 是光滑曲面 $\Sigma$ 的 \paren[]
+\end{question}
+\begin{choices}
+    \item 法向量的方向余弦.
+    \item 指向外侧的法向量的方向余弦.
+    \item 指向内侧的法向量的方向余弦.
+    \item $\Sigma$ 上曲线切向量的方向余弦.
+\end{choices}
+
+\begin{question}[points = 3]
+    微分方程 $y^{\prime\prime} - 3y^{\prime} + 2y = xe^{2x}$ 的一个特解应具有形式 \paren[]
+\end{question}
+\begin{choices}
+    \item $ax^2 + bx$
+    \item $(ax^2 + bx)e^{2x}$
+    \item $(ax + b)e^{2x}$
+    \item $ax + b$
+\end{choices}
+
+\section{解答题：本题共 9 小题，共 61 分}
+\examsetup
+{
+    solution/blank-type = manual,
+    % 解答空间设置为25±5ex
+    solution/blank-vsep = 25ex plus 5ex minus 5ex
+}
+
+\begin{problem}[points = 8]
+求函数 $f(x, y) = x^3 + 2x^2 + y^2 -2xy$ 的极值.
+\end{problem}
+
+\begin{problem}[points = 8]
+判断下列级数是收敛还是发散？并说明理由.
+\end{problem}
+\begin{calculations}[columns = 2, label = (\arabic*)]
+    \item $\sum\limits_{n = 1}^{\infty} \frac{2^nn!}{n^n}$
+    \item $\sum\limits_{n = 1}^{\infty} \left[\frac{1}{n} - \ln{\left(1 + \frac{1}{n}\right)}\right]$
+\end{calculations}
+
+\begin{problem}[points = 8]
+判断下列级数是绝对收敛、条件收敛还是发散？并说明理由.
+\end{problem}
+\begin{calculations}[columns = 2, label = (\arabic*)]
+    \item $\sum\limits_{n = 1}^{\infty} (-1)^n\left(1 + \frac{2}{n}\right)^{n^2}$
+    \item $\sum\limits_{n = 2}^{\infty} (-1)^{n + 1}\frac{1}{\ln{n}}$
+\end{calculations}
+
+\begin{problem}[points = 8]
+求 $f(x) = \ln{(2 + x)}$ 的麦克劳林展开式.
+\end{problem}
+
+\begin{problem}[points = 8]
+计算曲面积分 $\iint\limits_\Sigma (z - x)\mathrm{d}y\mathrm{d}z + (y + y^2)\mathrm{d}z\mathrm{d}x + (z^2 + xy^2)\mathrm{d}x\mathrm{d}y$ ，
+其中 $\Sigma$ 为下半球面 $x^2 + y^2 + z^2 = 1(z \leq 0)$ ，取下侧.
+\end{problem}
+
+\begin{problem}[points = 8]
+求幂级数 $\sum\limits_{n = 0}^{\infty} 4n^2x^{2n - 1}$ 的收敛域与和函数.
+\end{problem}
+
+\begin{problem}[points = 5]
+证明：设函数 $P(x, y),\, Q(x, y)$ 在单连通区域 $G$ 内具有一阶连续偏导数，若在 $G$ 内，$P\mathrm{d}x + Q\mathrm{d}y$ 是某二元函数 $u(x, y)$ 的全微分，
+即 $\mathrm{d}u = P\mathrm{d}x + Q\mathrm{d}y$ ，则在 $G$ 内每一点都有 $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$.
+\end{problem}
+
+\begin{problem}[points = 6]
+设 $\Sigma$ 为曲面 $z = x^2 + y^2(0 \leq z \leq 1)$ ，点 $M(x, y, z) \in \Sigma$ ，
+$\Pi$ 为 $\Sigma$ 在点 $M$ 处的切平面， $d(x, y, z)$ 为原点到平面 $\Pi$ 的距离，
+求 $\iint\limits_\Sigma d(x, y, z)\mathrm{d}S$.
+\end{problem}
+
+\begin{problem}[points = 8]
+设曲线积分 $\int_L [4f(x) - (2x + 3)\sin{x}]y\mathrm{d}x - f^{\prime}(x)\mathrm{d}y$ 与路径无关，
+其中 $f(x)$ 及其导函数 $f^{\prime}(x)$ 过原点，且 $f^{\prime}(x)$ 连续，求 $f(x)$.
+\end{problem}
