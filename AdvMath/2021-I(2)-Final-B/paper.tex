@@ -1,0 +1,395 @@
+% @file paper.tex
+% @brief 2021高等数学I(2)期末考题B
+% @author 24bit-xjkp
+% @email 2283572185@qq.com
+
+\section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
+
+\begin{question}[points = 3]
+    $\lim\limits_{x \to 1 \atop y \to 0} \frac{\ln{1 + e^{xy}}}{e^{xy}} = $ \fillin[$\ln{2}$]；
+\end{question}
+\begin{solution}
+    极限存在，直接计算即可 $\lim\limits_{x \to 1 \atop y \to 0} \frac{\ln{1 + e^{xy}}}{e^{xy}}$
+    $= \lim\limits_{x \to 1 \atop y \to 0} \frac{\ln{1 + 1}}{1} = \ln{2}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设函数 $z = \frac{y}{x}$ ，在点 $(1, 1)$ 处当 $\Delta x = 0.1, \Delta y = - 0.2$ 时的全微分是 \fillin[$-0.3$]；
+\end{question}
+\begin{solution}
+    $\because \frac{\partial z}{\partial x} = -\frac{y}{x^2} \quad \frac{\partial z}{\partial y} = \frac{1}{x}$
+
+    $\therefore \mathrm{d}z|_{(1, 1)} = -\mathrm{d}x + \mathrm{d}y \qquad \therefore \Delta z = -0.1 - 0.2 = -0.3$；
+\end{solution}
+
+\begin{question}[points = 3]
+    曲线 $x = \frac{t}{1 + t}, \, y = \frac{1 + t}{t}, \, z = t^2$ 在对应于 $t = 1$ 的点处的法平面方程为
+    \fillin[$\frac{1}{4}(x - \frac{1}{2}) - (y - 2) + 2(z - 1) = 0$]；
+\end{question}
+\begin{solution}
+    $\because x^{\prime} = \frac{1}{(1 + t)^2} \quad y^{\prime} = -\frac{1}{t^2} \quad z^{\prime} = 2t$
+
+    $\therefore x^{\prime}|_{t = 1} = \frac{1}{4} \quad y^{\prime}|_{t = 1} = -1 \quad z^{\prime}|_{t = 1} = 2 \qquad$
+    又 $\because x|_{t = 1} = \frac{1}{2} \quad y|_{t = 1} = 2 \quad z|_{t = 1} = 1$
+
+    $\therefore \Pi: \frac{1}{4}(x - \frac{1}{2}) - (y - 2) + 2(z - 1) = 0$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\Sigma$ 为球面 $x^2 + y^2 + z^2 = 1$ ，则球面上的点 $\left(-\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}\right)$
+    指向球面外侧的单位法向量是 \fillin[$\left(-\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}\right)$]；
+\end{question}
+\begin{solution}
+    令 $F = x^2 + y^2 + z^2 - 1, \, P = \left(-\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}\right)$
+
+    $\therefore \frac{\partial F}{\partial x} = 2x \quad \frac{\partial F}{\partial y} = 2y \quad \frac{\partial F}{\partial z} = 2z \qquad$
+    $\therefore \frac{\partial F}{\partial x}|_P = -\frac{2}{\sqrt{3}} \quad$
+    $\frac{\partial F}{\partial y}|_P = -\frac{2}{\sqrt{3}} \quad$
+    $\frac{\partial F}{\partial z}|_P = -\frac{2}{\sqrt{3}}$
+
+    $\therefore \vec{n} = \left(-\frac{2}{\sqrt{3}}, -\frac{2}{\sqrt{3}}, -\frac{2}{\sqrt{3}}\right) \qquad$
+    $\therefore \vec{n^0} = \left(-\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}\right)$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设向量场 $A = 2x^3yz\vec{i} - x^2y^2z\vec{j} - x^2yz^2\vec{k}$ ，则其在点 $M(1, 1, 2)$ 处的散度 $\mathrm{div}A|_M = $ \fillin[4]；
+\end{question}
+\begin{solution}
+    $\because \nabla \cdot A = 6x^2yz - 2x^yz - 2x^2yz = 2x^2yz \qquad$
+    $\therefore \mathrm{div}A|_M = 4$；
+\end{solution}
+
+\begin{question}[points = 3]
+    $p$-级数 $\sum\limits_{n = 1}^{\infty} \frac{1}{n^p}$ ，当且仅当 \fillin[{$(0, 1]$}] 时发散（填取值范围）；
+\end{question}
+\begin{solution}
+    若 $p \leq 1$ ，则 $\frac{1}{n^p} \geq \frac{1}{n} \qquad$
+    又 $\because \sum\limits_{n = 1}^{\infty} \frac{1}{n}$ 发散 $\qquad \therefore \sum\limits_{n = 1}^{\infty} \frac{1}{n^p}$ 发散
+
+    具体参阅《高等数学（下册）》170-171页；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\lim\limits_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right| = 3$ ，
+    则级数 $\sum\limits_{n = 1}^{\infty} a_nx^{2n - 1}$ 的收敛半径$R = $ \fillin[$\frac{\sqrt{3}}{3}$]；
+\end{question}
+\begin{solution}
+    令 $u_n = a_nx^{2n - 1} \qquad \because u_n$ 缺少偶次项 $\qquad \therefore$ 不能直接使用幂级数收敛半径公式
+
+    故使用比值审敛法 $\quad \because \lim\limits_{n \to \infty} \left|\frac{u_{n + 1}}{u_n}\right| = 3x^2 < 1 \qquad$
+    $\therefore |x| < \frac{\sqrt{3}}{3} \qquad \therefore R = \frac{\sqrt{3}}{3}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $f(x)$ 为周期为 $2\pi$ 的周期函数，其在 $(-\pi, \pi]$ 上的表达式为
+    $f(x) = \begin{cases}
+            -1, \pi < x \leq 0 \\
+            1 + x^2, 0 < x \leq \pi
+        \end{cases}$ ， $S(x)$ 为 $f(x)$ 的以 $2\pi$ 为周期的傅里叶级数的和函数，则 $S(x) = $ \fillin[$\frac{\pi^2}{2}$]；
+\end{question}
+\begin{solution}
+    $f(x)$ 在 $x = \pi$ 处不连续
+
+    $\because \lim\limits_{x \to \pi^+} f(x) = -1 \quad \lim\limits_{x \to x^-} f(x) = 1 + \pi^2$
+
+    $\therefore S(\pi) = \frac{f(\pi^+) + f(\pi^-)}{2} = \frac{\pi^2}{2}$；
+\end{solution}
+
+\begin{question}[points = 3]
+    求微分方程 $y^{\prime\prime} = \frac{1}{x}y^{\prime} + xe^x(x > 0)$ 的通解 \fillin[$y = xe^x - e^x + C_1x^2 + C_2$]；
+\end{question}
+\begin{solution}
+    令 $u = y^{\prime} \qquad \therefore u^{\prime} = \frac{u}{x} + xe^x$
+
+    $\therefore \int \frac{\mathrm{d}u}{u} = \int \frac{1}{x} + \frac{xe^x}{u}\mathrm{d}x \qquad$
+    $\therefore \ln{u} = \ln{x} + C(x) \qquad \therefore u = xC(x)$
+
+    $\therefore C + xC^{\prime} = C + xe^x \qquad \therefore C^{\prime} = e^x \qquad \therefore C(x) = e^x + C_1$
+
+    $\therefore u = xe^x + C_1x \qquad \therefore \int \mathrm{d}y = \int xe^x + C_1x \mathrm{d}x \qquad$
+    $\therefore y = xe^x - e^x + C_1x^2 + C_2$；
+\end{solution}
+
+\section{选择题：本题共 3 小题，每小题 3 分，共 9 分}
+
+\begin{question}[points = 3]
+    $f(x) = \begin{cases}
+            (x^2 + y^2)\sin{\frac{1}{x^2 + y^2}}, x^2 + y^2 \neq 0 \\
+            0, x^2 + y^2 = 0
+        \end{cases}$ 在 $(0, 0)$ 处 \paren[D]；
+\end{question}
+\begin{choices}
+    \item 偏导数不存在
+    \item 偏导数存在且连续
+    \item 不可微
+    \item 可微
+\end{choices}
+\begin{solution}
+    此类题目必须根据定义求解
+
+    $\because \lim\limits_{\Delta x \to 0} \frac{\Delta x^2\sin{\frac{1}{\Delta x^2}}}{\Delta x}$
+    $= \lim\limits_{\Delta x \to 0} \Delta x\sin{\frac{1}{\Delta x^2}} = 0 \quad$
+    $\lim\limits_{\Delta y \to 0} \frac{\Delta y^2\sin{\frac{1}{\Delta y^2}}}{\Delta y}$
+    $= \lim\limits_{\Delta y \to 0} \Delta y\sin{\frac{1}{\Delta y^2}} = 0$
+
+    $\therefore$ 偏导数存在 $\qquad$
+    又 $\because \frac{\partial f}{\partial x} = 2x\sin{\frac{1}{x^2 + y^2}} + \frac{2x}{x^2 + y^2}\cos{\frac{1}{x^2 + y^2}}$
+
+    $\therefore \lim\limits_{x \to 0} \frac{\partial f}{\partial x}|_{y = 0}$
+    $= 2x\sin{\frac{1}{x^2}} + \frac{2x}{x^2}\cos{\frac{1}{x^2}} = \infty \qquad$
+    $\therefore$ 偏导数在点 $(0, 0)$ 处不连续
+
+    $\because \lim\limits_{\Delta x \to 0 \atop \Delta y \to 0}$
+    $\frac{(\Delta x^2 + \Delta y^2)\sin{\frac{1}{\Delta x^2 + \Delta y^2}} - (0 \cdot \Delta x + 0 \cdot \Delta y) - 0}{\sqrt{\Delta x^2 + \Delta y^2}}$
+    $= \lim\limits_{\Delta x \to 0 \atop \Delta y \to 0} \sqrt{\Delta x^2 + \Delta y^2}\sin{\frac{1}{\Delta x^2 + \Delta y^2}} = 0$
+
+    $\therefore f(x)$ 在点 $(0, 0)$ 处可微 $\qquad$ 又 $\because$ 可微 $\Rightarrow$ 偏导数存在 $\qquad \therefore$ 选择 $f(x)$ 可微；
+\end{solution}
+
+\begin{question}[points = 3]
+    设 $\Sigma$ 为上半球面 $z = \sqrt{4 - x^2 - y^2}$ ，则曲面积分 $\iint\limits_{\Sigma} \frac{\mathrm{d}S}{1 + \sqrt{x^2 + y^2 + z^2}}$
+    的值为 \paren[D]
+\end{question}
+\begin{choices}
+    \item $4\pi$
+    \item $\frac{16}{5}\pi$
+    \item $\frac{16}{3}\pi$
+    \item $\frac{8}{3}\pi$
+\end{choices}
+\begin{solution}
+    $\because x^2 + y^2 + z^2 = 4$
+
+    $\therefore \iint\limits_{\Sigma} \frac{\mathrm{d}S}{1 + \sqrt{x^2 + y^2 + z^2}} = \frac{1}{3} \iint\limits_{\Sigma} \mathrm{d}S$
+    $= \frac{1}{3} \times \frac{1}{2} \times 4\pi \times 2^2 = \frac{8}{3}\pi$；
+\end{solution}
+
+\begin{question}[points = 3]
+    设常数 $k \neq 0$ ，则级数 $\sum\limits_{n = 1}^{\infty} \sin{(n\pi + \frac{k\pi}{n})}$ \paren[A]
+\end{question}
+\begin{choices}
+    \item 条件收敛
+    \item 绝对收敛
+    \item 发散
+    \item 敛散性与 $k$ 的取值有关
+\end{choices}
+\begin{solution}
+    $\sum\limits_{n = 1}^{\infty} \sin{(n\pi + \frac{k\pi}{n})} = \sum\limits_{n = 1}^{\infty} (-1)^n\sin{\frac{k\pi}{n}}$
+
+    当 $\frac{k\pi}{n_1} \leq \pi$ 时 $\quad \because \lim\limits_{n \to \infty} \frac{\sin{\frac{k\pi}{n}}}{\frac{k\pi}{n}} = 1 \quad$
+    $\therefore \sum\limits_{n = n_1}^{\infty} \sin{\frac{k\pi}{n}}$ 的敛散性与 $\sum\limits_{n = n_1}^{\infty} \frac{k\pi}{n}$ 相同
+
+    $\because \sum\limits_{n = n_1}^{\infty} \frac{k\pi}{n}$ 发散 $\qquad \therefore \sum\limits_{n = n_1}^{\infty} \sin{\frac{k\pi}{n}}$ 发散
+    $\qquad \therefore \sum\limits_{n = 1}^{\infty} \sin{\frac{k\pi}{n}}$ 发散
+
+    $\because \lim\limits_{n \to \infty} \sin{\frac{k\pi}{n}} = 0, \, \sin{\frac{k\pi}{n}}$ 递减
+    $\qquad \therefore$ 原级数条件收敛；
+\end{solution}
+
+\section{解答题：本题共 9 小题，共 61 分}
+\examsetup
+{
+    solution/blank-type = manual,
+    % 解答空间设置为25±5ex
+    solution/blank-vsep = 25ex plus 5ex minus 5ex
+}
+
+\begin{problem}[points = 6]
+设 $y(x), z(x)$ 由方程组 $\begin{cases}
+        z = x^2 + y^2 \\
+        x^2 + 2y^2 + 3z^2 = 20
+    \end{cases}$ 确定，求 $\frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\mathrm{d}z}{\mathrm{d}x}$.
+\end{problem}
+\begin{solution}
+    $\because \begin{cases}
+            -2y\mathrm{d}y + \mathrm{d}z = 2x\mathrm{d}x \\
+            4y\mathrm{d}y + 6z\mathrm{d}z = -2x\mathrm{d}x
+        \end{cases}$
+
+    $\therefore D = \begin{vmatrix}
+            -2y & 1  \\
+            4y  & 6z
+        \end{vmatrix} = -12yz - 4y \quad$
+    $D_y = \begin{vmatrix}
+            2x  & 1  \\
+            -2x & 6z
+        \end{vmatrix} = 12xz + 2x \quad$
+    $D_z = \begin{vmatrix}
+            -2y & 2x  \\
+            4y  & -2x
+        \end{vmatrix} = -4xy$
+
+    $\therefore \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{D_y}{D} = -\frac{6xy + x}{6yz + 2y} \quad$
+    $\frac{\mathrm{d}z}{\mathrm{d}x} = \frac{D_z}{D} = \frac{x}{3z + 1}$；
+\end{solution}
+
+\begin{problem}[points = 7]
+计算 $\iint\limits_{\Sigma} x\mathrm{d}y\mathrm{d}z + y\mathrm{d}z\mathrm{d}x + z\mathrm{d}x\mathrm{d}y$
+其中 $\Sigma$ 为 $z = x^2 + y^2(0 \leq z \leq 4)$ 的上侧.
+\end{problem}
+\begin{solution}
+    取 $\Sigma': x^2 + y^2 \leq 4, z = 4, $ 下侧
+
+    $\oiint\limits_{\Sigma + \Sigma'} = -\iiint\limits_{\Omega} (1 + 1 + 1)\mathrm{d}V$
+    $= -3\int_0^4 \pi z\mathrm{d}z = -24\pi$
+
+    $\iint\limits_{\Sigma'} = -\iint\limits_{D_{xy}} 4\mathrm{d}\sigma = -4\times\pi\times2^2 = -16\pi \qquad$
+    $\therefore \iint\limits_{\Sigma} = \oiint\limits_{\Sigma + \Sigma'} - \iint\limits_{\Sigma'}$
+    $= -24\pi - (-16\pi) = -8\pi$；
+\end{solution}
+
+\begin{problem}[points = 6]
+求微分方程 $(x^2 - 3xy^2)\mathrm{d}x + (y^2 - 3x^2y)\mathrm{d}y = 0$ 的通解.
+\end{problem}
+\begin{solution}
+    令 $P = x^2 - 3xy^2 \quad Q = y^2 - 3x^2y$
+
+    $\because \frac{\partial P}{\partial y} = -6 xy \quad \frac{\partial Q}{\partial x} = -6xy \qquad$
+    $\therefore \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \qquad$
+    $\therefore P\mathrm{d}x + Q\mathrm{d}y$ 是函数 $u$ 的全微分
+
+    令 $\mathrm{d}u = P\mathrm{d}x + Q\mathrm{d}y \qquad$
+    $\therefore \int \mathrm{d}u = \int (x^2 - 3xy^2)\mathrm{d}x \qquad$
+    $\therefore u = \frac{1}{3}x^3 - \frac{3}{2}x^2y^2 + C(y)$
+
+    $\because \frac{\partial u}{\partial y} = Q \qquad$
+    $\therefore -3x^2y + C^{\prime} = y^2 -3x^2y \qquad \therefore C^{\prime} = y^2 \qquad$
+    $\therefore \int \mathrm{d}C = \int y^2\mathrm{d}y$
+
+    $\therefore C(y) = \frac{1}{3}y^3 + C \qquad$
+    $\therefore u = \frac{1}{3}x^3 - \frac{3}{2}x^2y^2 + \frac{1}{3}y^3 + C \qquad$
+    $\therefore \frac{1}{3}x^3 - \frac{3}{2}x^2y^2 + \frac{1}{3}y^3 = C$；
+\end{solution}
+
+\begin{problem}[points = 7]
+将函数 $f(x) = \frac{1}{x^2 + 3x + 2}$ 展开成 $x + 4$ 的幂级数.
+\end{problem}
+\begin{solution}
+    $f(x) = \frac{1}{(x + 1)}(x + 2) = \frac{1}{x + 1} - \frac{1}{x + 2}$
+    $= \frac{1}{2\left(1 - \frac{x + 4}{2}\right)} - \frac{1}{3\left(1 - \frac{x +  4}{3}\right)}$
+
+    $\therefore f(x) = \frac{1}{2}\sum\limits_{n = 0}^{\infty} \frac{(x + 4)^n}{2^n} - \frac{1}{3}\sum\limits_{n = 0}^{\infty} \frac{(x + 4)^n}{3^n}$
+    $= \sum\limits_{n = 0}^{\infty} \left(\frac{1}{2^{n + 1}} - \frac{1}{3^{n + 1}}\right)(x + 4)^n ,\, (-6 < x < -2)$；
+\end{solution}
+
+\begin{problem}[points = 9]
+试判断下列级数是发散、条件收敛还是绝对收敛，并说明理由.
+\end{problem}
+\begin{calculations}[columns = 3, label = (\arabic*)]
+    \item $\sum\limits_{n = 1}^{\infty} \frac{2^nn!}{n^n}$
+    \item $\sum\limits_{n = 2}^{\infty} \frac{(-1)^n\sqrt{n}}{n - 1}$
+    \item $\sum\limits_{n = 1}^{\infty} \ln{\frac{n + 1}{n}}$
+\end{calculations}
+\begin{solution}
+    \begin{calculations}[columns = 3, label = (\arabic*)]
+        \item $\lim\limits_{n \to \infty} \frac{2^{n + 1}(n + 1)!}{(n + 1)^{n + 1}} \cdot \frac{n^n}{2^nn!}$ \\
+        $= \lim\limits_{n \to \infty} 2 \left(\frac{n}{n + 1}\right)^n$ \\
+        $= \lim\limits_{n \to \infty} 2e^{n\ln{(-\frac{1}{n + 1} + 1)}}$ \\
+        $= \lim\limits_{n \to \infty} 2e^{-\frac{n}{n + 1}}$ \\
+        $= \frac{2}{e} < 1$ \\
+        $\therefore$ 原级数收敛；
+
+        \item $\because \frac{\sqrt{n}}{n - 1} > \frac{\sqrt{n}}{n} = \frac{1}{\sqrt{n}}$ \\
+        又 $\because \sum\limits_{n = 2}^{\infty}\frac{1}{\sqrt{n}}$ 发散 \\
+        $\therefore \sum\limits_{n = 2}^{\infty}\frac{\sqrt{n}}{n - 1}$ 发散 \\
+        $\because \lim\limits_{n \to \infty} \frac{\sqrt{n}}{n - 1} = 0$ \\
+        又 $\because \frac{\sqrt{n}}{n - 1}$ 递减 \\
+        $\therefore$ 原级数条件收敛；
+
+        \item $\because \lim\limits_{n \to \infty} \frac{\ln{(1 + \frac{1}{n})}}{\frac{1}{n}} = 1$ \\
+        $\therefore$ 敛散性与 $\sum\limits_{n = 1}^{\infty} \frac{1}{n}$ 一致 \\
+        又 $\because \sum\limits_{n = 1}^{\infty} \frac{1}{n}$ 发散 \\
+        $\therefore$ 原级数发散；
+    \end{calculations}
+\end{solution}
+
+\begin{problem}[points = 7]
+求微分方程 $y^{\prime\prime} - 2y^{\prime} + y = 4xe^x$ 的通解.
+\end{problem}
+\begin{solution}
+    特征方程 $\lambda^2 - 2\lambda + 1 = 0 \qquad \therefore \lambda_1 = \lambda_2 = 1$
+
+    $\because \mu = 1$ 是特征方程的二重根 $\qquad \therefore$ 设 $Q_m = x^2(ax + b) = ax^3 + bx^2$
+
+    $\therefore Q_m^{\prime} = 3ax^2 + 2bx \quad Q_m^{\prime\prime} = 6ax + 2b$
+
+    $\because Q_m^{\prime\prime} + (2\mu + p)Q_m^{\prime} + (\mu^2 + p\mu + q)Q_m = 4x \qquad$
+    $\therefore 6ax + 2b = 4x \qquad$
+    $\therefore \begin{cases}
+            a = \frac{2}{3} \\
+            b = 0
+        \end{cases}$
+
+    $\therefore Q_m = \frac{2}{3}x^3 \qquad \therefore y^* = \frac{2}{3}x^3e^x \qquad$
+    $\therefore y = \left(C_1 + C_2x + \frac{2}{3}x^3\right)e^x$；
+\end{solution}
+
+\begin{problem}[points = 7]
+设 $f(x)$ 在 $x > 0$ 时可导，且满足 $xf(x) = 3x + \int_1^x f(t)\mathrm{d}t$. 求 $f(x)$.
+\end{problem}
+\begin{solution}
+    $\because xf(x) = 3x + \int_1^x f(t)dt$
+
+    $\therefore f(1) = 3 + \int_1^1 f(t)\mathrm{d}t = 3 \quad f + xf^{\prime} = 3 + f$
+
+    $\therefore \int \mathrm{d}f = \int \frac{3}{x}\mathrm{d}x \qquad \therefore f(x) = 3\ln{x} + C$
+
+    又 $\because f(1) = 3 \qquad \therefore 0 + C = 3 \qquad \therefore C = 3 \qquad$
+    $\therefore f(x) = 3(\ln{x} + 1)$；
+\end{solution}
+
+\begin{problem}[points = 7]
+求幂级数 $\sum\limits_{n = 1}^{\infty} \frac{n^2 + 1}{n}x^n$ 的收敛域与和函数.
+\end{problem}
+\begin{solution}
+    令 $u_n = \frac{n^2 + 1}{n}$
+
+    $\therefore \rho = \lim\limits_{n \to \infty} \frac{u_{n + 1}}{u_n} = \lim\limits_{n \to \infty} \frac{n^3 + 2n^2 + 2n}{n^3 + n^2 + n + 1} = 1 \qquad$
+    $\therefore R = \frac{1}{\rho} = 1$
+
+    当 $x = \pm 1$ 时 $\quad \because \sum\limits_{n = 1}^{\infty} \frac{n^2 + 1}{n} = \sum\limits_{n = 1}^{\infty} n + \frac{1}{n}$ 发散
+    $\qquad \therefore$ 收敛域为 $(-1, 1)$
+
+    令 $s_1(x) = \sum\limits_{n = 1}^{\infty} nx^n \quad s_2(x) = \sum\limits_{n = 1}^{\infty} \frac{1}{n}x^n$
+
+    $\therefore \frac{s_1(x)}{x} = \sum\limits_{n = 1}^{\infty} nx^{n - 1} \quad s_2(x)^{\prime} = \sum\limits_{n = 1}^{\infty} x^{n - 1}$
+
+    $\therefore \int_0^x \frac{s_1(x)}{x}\mathrm{d}x = \int_0^x \sum\limits_{n = 1}^{\infty} nx^{n - 1}\mathrm{d}x \quad$
+    $\int_0^x s_2(x)^{\prime}\mathrm{d}x = \int_0^x \sum\limits_{n = 1}^{\infty} x^{n - 1}\mathrm{d}x$
+
+    $\therefore \int_0^x \frac{s_1(x)}{x}\mathrm{d}x = \sum\limits_{n = 1}^{\infty} x^n = \frac{x}{1 - x} \quad$
+    $s_2(x) = \int_0^x \frac{1}{1 - x}\mathrm{d}x$
+
+    $\therefore \frac{s_1(x)}{x} = \frac{1}{(1 - x)^2} \quad s_2(x) = -\ln{(1 - x)}$
+
+    $\therefore \sum\limits_{n = 1}^{\infty} \frac{n^2 + 1}{n}x^n = s_1(x) + s_2(x) = \frac{x}{(1 - x)^2} - \ln{(1 - x)} ,\, (-1 < x < 1)$；
+\end{solution}
+
+\begin{problem}[points = 5]
+证明 $\iint\limits_{\Sigma} (x + y + z + \sqrt{3}a)\mathrm{d}S \geq 12\pi a^3(a > 0)$
+其中 $\Sigma$ 为球面 $x^2 + y^2 + z^2 - 2ax - 2ay - 2az + 2a^2 = 0$.
+\end{problem}
+\begin{solution}
+    $\Sigma: (x - a)^2 + (y - a)^2 + (z - a)^2 = a^2$ ，外侧
+
+    $I_1 = \iint\limits_{\Sigma} \sqrt{3}a\mathrm{d}S = \sqrt{3}a \times 4\pi a^2 = 4\sqrt{3}\pi a^3 \quad$
+    $I_2 = \iint\limits_{\Sigma} (x + y + z)\mathrm{d}S = 3\iint\limits_{\Sigma} x\mathrm{d}S$
+
+    令 $F = x^2 + y^2 + z^2 - 2ax - 2ay - 2az + 2a^2 \quad$
+    $\frac{\partial F}{\partial x} = 2x - 2a \quad$
+    $\frac{\partial F}{\partial y} = 2y - 2a \quad$
+    $\frac{\partial F}{\partial z} = 2z - 2a$
+
+    $\therefore \vec{n} = (x - a, y - a, z - a) \qquad$
+    $\therefore \vec{n^0} = \frac{1}{a}(x - a, y - a, z - a)$
+
+    $\therefore I_2 = 3\iint\limits_{\Sigma} \frac{ax}{x - a}\mathrm{d}y\mathrm{d}z$
+    $= 3\iiint\limits_{\Omega} -\frac{a^2}{(x - a)^2}\mathrm{d}V$
+    $= -3a^2\int_0^{2a} \frac{\pi\left(a^2 - (x - a)^2\right)}{(x - a)^2}\mathrm{d}x$
+
+    $= -3\pi a^2\int_0^{2a} \frac{a^2}{(x - a)^2} - 1\mathrm{d}x$
+    $= -3\pi a^2\left[-\frac{a^2}{x - a} - x\right]_0^{2a}$
+    $= -3\pi a^2\left[-a - 2a - a + 0\right] = 12\pi a^2$
+
+    $\therefore \iint\limits_{\Sigma} (x + y + z + \sqrt{3}a)\mathrm{d}S = I_1 + I_2 = (12 + 4\sqrt{3})\pi a^3 \geq 12\pi a^3 \qquad$
+    $\therefore$ 原题得证；
+\end{solution}

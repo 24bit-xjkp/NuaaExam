@@ -123,6 +123,8 @@ rule_end()
 
 add_rules("latex")
 set_extension(".pdf")
+-- 添加LaTeX模板到全局依赖项
+add_files("template/*.tex")
 includes("*/xmake.lua")
 
 includes("@builtin/xpack")
