@@ -6,21 +6,44 @@
 \section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
 
 \begin{question}[points = 3]
-    $\lim\limits_{(x, y) \to (0, 0)} \frac{2 - \sqrt{xy + 4}}{xy} = $ \fillin[]；
+    $\lim\limits_{(x, y) \to (0, 0)} \frac{2 - \sqrt{xy + 4}}{xy} = $ \fillin[$-\frac{1}{4}$]；
 \end{question}
+\begin{solution}
+    令 $t = xy \quad \therefore \lim\limits_{(x, y) \to (0, 0)} \frac{2 - \sqrt{xy + 4}}{xy} = \lim\limits_{t \to 0} \frac{2 - \sqrt{t + 4}}{t}$
+    $= \lim\limits_{t \to 0} -\frac{1}{2\sqrt{t + 4}} = -\frac{1}{4}$
+\end{solution}
 
 \begin{question}[points = 3]
-    若函数 $f(x, y) = x^2y + e^{xy},\, M(1,1)$ ，则 $\mathrm{d}f|_M = $ \fillin[]；
+    若函数 $f(x, y) = x^2y + e^{xy},\, M(1,1)$ ，则 $\mathrm{d}f|_M = $ \fillin[$(2 + e)\mathrm{d}x + (1 + e)\mathrm{d}y$]；
 \end{question}
+\begin{solution}
+    $\because \frac{\partial f}{\partial x} = 2xy + ye^{xy} \quad \frac{\partial f}{\partial y} = x^2 + xe^{xy}$
+
+    $\therefore \frac{\partial f}{\partial x}|_M = 2 + e \quad \frac{\partial f}{\partial y}|_M = 1 + e \qquad$
+    $\therefore \mathrm{d}f|_M = (2 + e)\mathrm{d}x + (1 + e)\mathrm{d}y$
+\end{solution}
 
 \begin{question}[points = 3]
-    若函数 $f(x, y, z) = xyz$ ，则 $\mathrm{div}(\mathrm{grad}f) = $ \fillin[]；
+    若函数 $f(x, y, z) = xyz$ ，则 $\mathrm{div}(\mathrm{grad}f) = $ \fillin[$0$]；
 \end{question}
+\begin{solution}
+    $\because \frac{\partial^2 f}{\partial x^2} = \frac{\partial^2 f}{\partial y^2} = \frac{\partial^2 f}{\partial z^2} = 0 \qquad$
+    $\therefore \triangle f = 0$
+\end{solution}
 
 \begin{question}[points = 3]
     设 $\Sigma$ 是上球面 $z = \sqrt{4 - x^2 - y^2}$ ，则
-    $\iint\limits_\Sigma \left(\frac{1}{\sqrt{x^2 + y^2 + z^2}} + xyz\right)\mathrm{d}S = $ \fillin[]；
+    $\iint\limits_\Sigma \left(\frac{1}{\sqrt{x^2 + y^2 + z^2}} + xyz\right)\mathrm{d}S = $ \fillin[$4\pi$]；
 \end{question}
+\begin{solution}
+    $\because \Sigma: x^2 + y^2 + z^2 = 4,\, z \geq 0$ ，关于平面 $xOz$ 对称
+
+    $\therefore \iint\limits_\Sigma xyz\mathrm{d}S = 0 \quad$
+    $\iint\limits_\Sigma \left(\frac{1}{\sqrt{x^2 + y^2 + z^2}}\right)\mathrm{d}S = \frac{1}{2} \iint\limits_\Sigma\mathrm{d}S$
+    $= \frac{1}{2} \times \frac{1}{2} \times 4\pi \times 2^2 = 4\pi$
+
+    $\therefore \iint\limits_\Sigma \left(\frac{1}{\sqrt{x^2 + y^2 + z^2}} + xyz\right)\mathrm{d}S = 4\pi + 0 = 4\pi$
+\end{solution}
 
 \begin{question}[points = 3]
     设 $L$ 为 $x^2 + y^2 = 1$ 正向封闭曲线，则曲线积分 $\oint_L \frac{y\mathrm{d}x + x\mathrm{d}y}{x^2 + y^2} = $ \fillin[]；
