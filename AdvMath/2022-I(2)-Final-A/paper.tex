@@ -3,7 +3,7 @@
 % @author 24bit-xjkp
 % @email 2283572185@qq.com
 
-\section{填空题：本题共 10 小题，每小题 3 分，共 30 分}
+\section{填空题：本题共 8 小题，每小题 3 分，共 24 分}
 
 \begin{question}[points = 3]
     $\lim\limits_{(x, y) \to (0, 0)} \frac{2 - \sqrt{xy + 4}}{xy} = $ \fillin[$-\frac{1}{4}$]；
@@ -46,27 +46,63 @@
 \end{solution}
 
 \begin{question}[points = 3]
-    设 $L$ 为 $x^2 + y^2 = 1$ 正向封闭曲线，则曲线积分 $\oint_L \frac{y\mathrm{d}x + x\mathrm{d}y}{x^2 + y^2} = $ \fillin[]；
+    设 $L$ 为 $x^2 + y^2 = 1$ 正向封闭曲线，则曲线积分 $\oint_L \frac{y\mathrm{d}x + x\mathrm{d}y}{x^2 + y^2} = $ \fillin[$0$]；
 \end{question}
+\begin{solution}
+    $\because \oint_L \frac{y\mathrm{d}x + x\mathrm{d}y}{x^2 + y^2} = \oint_L y\mathrm{d}x + x\mathrm{d}y$
+
+    $\therefore$ 令 $P = y \quad Q = x \qquad \therefore \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \qquad$
+    $\therefore \oint_L y\mathrm{d}x + x\mathrm{d}y = 0$；
+\end{solution}
 
 \begin{question}[points = 3]
     如果幂级数 $\sum\limits_{n = 0}^{\infty} a_nx^n$ 当 $x = 2$ 时收敛，
-    则级数 $\sum\limits_{n = 0}^{\infty} (-1)^na_n = $ \fillin[] （填条件收敛、绝对收敛、发散）；
+    则级数 $\sum\limits_{n = 0}^{\infty} (-1)^na_n$ \fillin[绝对收敛] （填条件收敛、绝对收敛、发散）；
 \end{question}
+\begin{solution}
+    $\because \sum\limits_{n = 0}^{\infty} a_nx^n$ 当 $x = 2$ 时收敛
+
+    $\therefore R \geq 2 \qquad \therefore \rho = \lim\limits_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right| \leq \frac{1}{2} \qquad$
+    $\therefore \sum\limits_{n = 0}^{\infty} (-1)^na_n$ 绝对收敛；
+\end{solution}
 
 \begin{question}[points = 3]
-    微分方程 $y^{\prime} + y\tan{x} = \cos{x}$ 的通解为 \fillin[]；
+    微分方程 $y^{\prime} + y\tan{x} = \cos{x}$ 的通解为 \fillin[$y = (x + C)\cos{x}$]；
 \end{question}
+\begin{solution}
+    $\because y^{\prime} + y\tan{x} = \cos{x}$
+
+    $\therefore \int \frac{\mathrm{d}y}{y} = \int -\tan{x} + \frac{\cos{x}}{y}\mathrm{d}x \qquad$
+    $\therefore \ln{y} = \ln{\cos{x}} + C(x) \qquad \therefore y = C(x)\cos{x}$
+
+    $\therefore C^{\prime}\cos{x} - C\sin{x} + C\sin{x} = \cos{x} \qquad \therefore C^{\prime} = 1 \qquad \therefore C(x) = x + C$
+
+    $\therefore y = (x + C)\cos{x}$
+\end{solution}
 
 \begin{question}[points = 3]
     微分方程 $(1 - x^2)y^{\prime\prime} - xy^{\prime} = 0$ 满足初始条件
-    $y|_{x = 0} = 0,\, y^{\prime}|_{x = 0} = 1$ 的特解为 \fillin[]；
+    $y|_{x = 0} = 0,\, y^{\prime}|_{x = 0} = 1$ 的特解为 \fillin[$y = \arcsin{x}$]；
 \end{question}
+\begin{solution}
+    令 $u = y^{\prime} \qquad \therefore u|_{x = 0} = 1$
+
+    $\because (1 - x^2)u^{\prime} - xu = 0 \qquad \therefore \int \frac{\mathrm{d}u}{u} = \int \frac{x}{1 - x^2}\mathrm{d}x \qquad$
+    $\therefore \ln{u} = -\frac{1}{2}\ln{(1 - x^2)} + C_1$
+
+    $\therefore u = \frac{C_1}{\sqrt{1 - x^2}} \qquad \because u|_{x = 0} = 1 \qquad \therefore C_1 = 1 \qquad$
+    $\therefore u = \frac{1}{\sqrt{1 - x^2}}$
+
+    $\because y^{\prime} = u \qquad \therefore \int \mathrm{d}y = \int \frac{1}{\sqrt{1 - x^2}}\mathrm{d}x \qquad$
+    $\therefore y = \arcsin{x} + C_2$
+
+    $\because y|_{x = 0} = 0 \qquad \therefore C_2 = 0 \qquad \therefore y = \arcsin{x}$
+\end{solution}
 
 \section{选择题：本题共 3 小题，每小题 3 分，共 9 分}
 
 \begin{question}[points = 3]
-    设 $(x_0, y_0)$ 是函数 $f(x, y)$ 定义域内的一点，则在点 $(x_0, y_0)$ 处，下列命题正确的是 \paren[]
+    设 $(x_0, y_0)$ 是函数 $f(x, y)$ 定义域内的一点，则在点 $(x_0, y_0)$ 处，下列命题正确的是 \paren[C]
 \end{question}
 \begin{choices}
     \item 若函数 $z = f(x, y)$ 作为任一变量 $x$ 或 $y$ 的一元函数都连续，则 $z = f(x, y)$ 必连续.
@@ -74,10 +110,19 @@
     \item 若函数 $z = f(x, y)$ 可微，则 $z = f(x, y)$ 在 $(x_0, y_0)$ 延任一方向的方向导数存在.
     \item 若函数 $z = f(x, y)$ 可微，则必存在一阶连续偏导数.
 \end{choices}
+\begin{solution}
+    考察二元函数性质
+    \begin{choices}
+        \item 在 $x$ 或 $y$ 方向上连续 $\nRightarrow$ 在任意路径上连续.
+        \item 二元函数的连续性与偏导数的存在性无关.
+        \item 可微 $\Rightarrow$ 方向导数存在.
+        \item 一阶偏导数连续 $\Rightarrow$ 可微，可微 $\nRightarrow$ 一阶偏导数连续.
+    \end{choices}
+\end{solution}
 
 \begin{question}[points = 3]
     若 $\oiint\limits_\Sigma P\mathrm{d}y\mathrm{d}z + Q\mathrm{d}z\mathrm{d}x + R\mathrm{d}x\mathrm{d}y$
-    $= \oiint\limits_\Sigma (P\cos{\alpha} + Q\cos{\beta} + R\cos{\gamma})\mathrm{d}S$ 等式成立，侧 $\cos{\alpha}, \cos{\beta}, \cos{\gamma}$ 是光滑曲面 $\Sigma$ 的 \paren[]
+    $= \oiint\limits_\Sigma (P\cos{\alpha} + Q\cos{\beta} + R\cos{\gamma})\mathrm{d}S$ 等式成立，侧 $\cos{\alpha}, \cos{\beta}, \cos{\gamma}$ 是光滑曲面 $\Sigma$ 的 \paren[A]
 \end{question}
 \begin{choices}
     \item 法向量的方向余弦.
@@ -85,9 +130,18 @@
     \item 指向内侧的法向量的方向余弦.
     \item $\Sigma$ 上曲线切向量的方向余弦.
 \end{choices}
+\begin{solution}
+    根据一二两类曲面积分间的联系，令 $\vec{F} = (P, Q, R)$
+
+    $\therefore \oiint\limits_\Sigma \vec{F}\cdot\mathrm{d}\vec{S} = \oiint\limits_\Sigma \vec{F}\cdot\vec{n^0}\mathrm{d}S \qquad$
+    $\because$ 滑曲面 $\Sigma$ 的法向量 $\vec{n^0} = (\cos{\alpha}, \cos{\beta}, \cos{\gamma})$
+
+    $\therefore \vec{F}\cdot\vec{n^0} = P\cos{\alpha} + Q\cos{\beta} + R\cos{\gamma} \qquad$
+    $\therefore$ 原等式成立；
+\end{solution}
 
 \begin{question}[points = 3]
-    微分方程 $y^{\prime\prime} - 3y^{\prime} + 2y = xe^{2x}$ 的一个特解应具有形式 \paren[]
+    微分方程 $y^{\prime\prime} - 3y^{\prime} + 2y = xe^{2x}$ 的一个特解应具有形式 \paren[B]
 \end{question}
 \begin{choices}
     \item $ax^2 + bx$
@@ -95,8 +149,14 @@
     \item $(ax + b)e^{2x}$
     \item $ax + b$
 \end{choices}
+\begin{solution}
+    特征方程 $\lambda^2 - 3\lambda + 2 = 0 \qquad \therefore \lambda_1 = 1 \quad \lambda_2 = 2$
 
-\section{解答题：本题共 9 小题，共 61 分}
+    $\because \mu = 2$ 为特征方程的一个根 $\qquad \therefore Q_m = x(ax + b) = ax^2 + bx \qquad$
+    $\therefore y^* = (ax^2 + bx)e^{2x}$
+\end{solution}
+
+\section{解答题：本题共 9 小题，共 67 分}
 \examsetup
 {
     solution/blank-type = manual,
