@@ -303,7 +303,7 @@ TSWLatexianTemp*
 .vscode
 .xmake
 build
-*.pdf
+exam-zh-doc.pdf
 .VSCodeCounter
 .emmyrc.json
 test.tex
