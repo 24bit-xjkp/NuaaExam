@@ -167,14 +167,65 @@
 \begin{problem}[points = 8]
 求函数 $f(x, y) = x^3 + 2x^2 + y^2 -2xy$ 的极值.
 \end{problem}
+\begin{solution}
+    $\because \frac{\partial f}{\partial x} = 3x^2 + 4x -2y \quad \frac{\partial f}{\partial y} = 2y - 2x$
+
+    $\therefore A = \frac{\partial^2 f}{\partial x^2} = 6x + 4 \quad B = \frac{\partial^2 f}{\partial x\partial y} = -2 \quad$
+    $C = \frac{\partial^2 f}{\partial y^2} = 2 \quad \therefore D = AC - B^2 = 12x + 4$
+
+    令 $\begin{cases}
+            \frac{\partial f}{\partial x} = 2x^2 + 4x -2y = 0 \\
+            \frac{\partial f}{\partial y} = 2y - 2x
+        \end{cases} \qquad$
+    $\therefore \begin{cases}
+            x_1 = 0 \\
+            y_1 = 0
+        \end{cases} \quad$
+    $\begin{cases}
+            x_2 = -\frac{2}{3} \\
+            y_2 = -\frac{4}{3}
+        \end{cases}$
+
+    当 $\begin{cases}
+            x_1 = 0 \\
+            y_1 = 0
+        \end{cases}$ 时 $\qquad$
+    $D = 12 > 0,\, A = 4 > 0 \qquad$
+    $\because f|_{(0, 0)} = 0$
+
+    $\therefore$ $f$ 在点 $(0, 0)$ 处取得极小值 $0$.
+
+    当 $\begin{cases}
+            x_2 = -\frac{2}{3} \\
+            y_2 = -\frac{4}{3}
+        \end{cases}$ 时 $\qquad$
+    $\because D = -4 < 0 \qquad \therefore (-\frac{2}{3}, -\frac{4}{3})$ 不是 $f$ 的极值点；
+\end{solution}
 
 \begin{problem}[points = 8]
 判断下列级数是收敛还是发散？并说明理由.
 \end{problem}
-\begin{calculations}[columns = 2, label = (\arabic*)]
+\begin{calculations}[columns = 2, label = (\arabic*), hsep = 8em]
     \item $\sum\limits_{n = 1}^{\infty} \frac{2^nn!}{n^n}$
     \item $\sum\limits_{n = 1}^{\infty} \left[\frac{1}{n} - \ln{\left(1 + \frac{1}{n}\right)}\right]$
 \end{calculations}
+\begin{solution}
+    \begin{calculations}[columns = 2, label = (\arabic*), hsep = 5em]
+        \item $\lim\limits_{n \to \infty} \frac{2^{n + 1}(n + 1)!}{(n + 1)^{n + 1}}\cdot\frac{n^n}{2^nn!}$ \\
+        $= \lim\limits_{n \to \infty} 2\cdot\left(\frac{n}{n + 1}\right)^n$ \\
+        $= \lim\limits_{n \to \infty} 2e^{n\ln{(-\frac{1}{n + 1} + 1)}}$ \\
+        $= \lim\limits_{n \to \infty} 2e^{-\frac{n}{n + 1}}$ \\
+        $= \frac{2}{e} < 1$ \\
+        $\therefore$ 原级数收敛；
+
+        \item $\sum\limits_{n = 1}^{\infty} \left[\frac{1}{n} - \ln{\left(1 + \frac{1}{n}\right)}\right]$ \\
+        $\because \ln{\left(1 + \frac{1}{n}\right)} = \frac{1}{n} - \frac{1}{2n^2}+o\left(\frac{1}{n^2}\right)$ \\
+        $\therefore S = \sum\limits_{n = 1}^{\infty} \left[\frac{1}{2n^2}-o\left(\frac{1}{n^2}\right)\right]$ \\
+        $\therefore$ 原级数与 $\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ 同阶 \\
+        又 $\because \sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ 收敛 \\
+        $\therefore$ 原级数收敛；
+    \end{calculations}
+\end{solution}
 
 \begin{problem}[points = 8]
 判断下列级数是绝对收敛、条件收敛还是发散？并说明理由.
